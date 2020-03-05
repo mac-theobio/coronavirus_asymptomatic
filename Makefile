@@ -21,11 +21,10 @@ Sources += coronavirus.bib
 ## Making a logical place for weitz_group code and figures
 ## Linking it temporarily to figures
 
+Ignore += group
 group:
 	git clone https://github.com/WeitzGroup/coronavirus_asymptomatic.git $@
 
-figures: group
-	$(LN) $< $@
 
 ######################################################################
 
