@@ -10,9 +10,11 @@ current: target
 
 # Content
 
-Sources += asymp_report_disease.abs.tex asymp_report_disease.acknowledge.tex asymp_report_disease.appendix.tex asymp_report_disease.author.tex asymp_report_disease.biblio.tex asymp_report_disease.settings.tex asymp_report_disease.tex asymp_report_disease.title.tex asymp_report_disease-short.body.tex
+Sources += abs.tex acknowledge.tex appendix.tex asymp.tex author.tex biblio.tex settings.tex short.body.tex title.tex 
+Sources += coronavirus.bib
 
-asymp_report_disease.pdf: asymp_report_disease.tex
+## asymp.pdf: asymp.tex
+## asymp.bbl: coronavirus.bib
 
 ######################################################################
 
