@@ -27,7 +27,6 @@ Ignore += group
 group:
 	git clone https://github.com/WeitzGroup/coronavirus_asymptomatic.git $@
 
-
 ######################################################################
 
 ### Makestuff
