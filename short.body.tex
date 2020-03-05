@@ -37,28 +37,76 @@ to the production of symptomatic cases.
 %and help characterize the relevance of asymptomatic transmission to
 %outbreak dynamics and control.
 
-To begin, consider a SEIR model variant in which there are two infectious categories --
-$I_a$ and $I_s$ -- corresponding to asymptomatic and symptomatic cases,
-respectively. Both types of individuals can infect others, but,
-only symptomatic cases can lead to fatalities, denoted
-by the $D$ category. In total, the dynamics of susceptibles, exposed,
-infectious, recovered, and dead are:
+To begin, consider a renewal equation variant in which incidence $i$ is divided into two categories -- $i_a$ and $i_s$ -- corresponding to incidence of asymptomatic and symptomatic cases, respectively. 
+Both types of individuals can infect others, but, they differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, as well as intrinsic generation-interval distributions, $g_a(\tau)$ and $g_s(\tau)$, reflecting their differences in the abilities to transmit and the courses of infection.
+Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person, depend on the natural history of infection:
+an individual with subclinical, and fast-clearing, symptoms is likely to have short generation intervals, whereas an individual with mild, but long-lasting, symptoms is likely to have long generation intervals.
+In total, the dynamics of susceptibles and incidence are:
 \begin{eqnarray}
-\dot{S}&=&-\beta_a S I_a -\beta_s S I_s \\
-\dot{E}&=&\beta_a S I_a +\beta_s S I_s -\gamma_e E\\
-\dot{I}_a&=&p\gamma_e E-\gamma_a I_a\\
-\dot{I}_s&=&(1-p)\gamma_e E-\gamma_s I_s\\
-\dot{R}&=&\gamma_a I_a + (1-f)\gamma_s I_s \\
-\dot{D}&=&f\gamma_s I_s.
+\dot{S}&=&-i(t) \\
+i(t)&=&\mathcal R_a S \int_0^\infty i_a(t-\tau) g_a(\tau) \mathrm{d}\tau + \mathcal R_s S \int_0^\infty i_s(t-\tau) g_s(\tau) \mathrm{d}\tau.
 \end{eqnarray}
-Here, $\beta_a$ and $\beta_s$ denote transmission rates,
-$\gamma_e$ denotes the transition from exposed to infectious,
-$p$ is the fraction of asymptomatic cases that
-are generated for each exposed individual,
-$1-p$ is the fraction of symptomatic cases that
-are generated for each exposed individual,
-$\gamma_a$ and $\gamma_s$ denote recovery rates,
-and $f$ denotes the case fatality ratio for symptomatic cases.
+Here, $p$ is the fraction of asymptomatic cases that are generated for each infected individual ($i_a(t)= p i(t)$), and $1-p$ is the fraction of symptomatic cases that are generated for each infected individual ($i_s(t)= (1-p) i(t)$).
+
+%To begin, consider a SEIR model variant in which there are two infectious categories --
+%$I_a$ and $I_s$ -- corresponding to asymptomatic and symptomatic cases,
+%respectively. Both types of individuals can infect others, but,
+%only symptomatic cases can lead to fatalities, denoted
+%by the $D$ category. In total, the dynamics of susceptibles, exposed,
+%infectious, recovered, and dead are:
+%\begin{eqnarray}
+%\dot{S}&=&-\beta_a S I_a -\beta_s S I_s \\
+%\dot{E}&=&\beta_a S I_a +\beta_s S I_s -\gamma_e E\\
+%\dot{I}_a&=&p\gamma_e E-\gamma_a I_a\\
+%\dot{I}_s&=&(1-p)\gamma_e E-\gamma_s I_s\\
+%\dot{R}&=&\gamma_a I_a + (1-f)\gamma_s I_s \\
+%\dot{D}&=&f\gamma_s I_s.
+%\end{eqnarray}
+%Here, $\beta_a$ and $\beta_s$ denote transmission rates,
+%$\gamma_e$ denotes the transition from exposed to infectious,
+%$p$ is the fraction of asymptomatic cases that
+%are generated for each exposed individual,
+%$1-p$ is the fraction of symptomatic cases that
+%are generated for each exposed individual,
+%$\gamma_a$ and $\gamma_s$ denote recovery rates,
+%and $f$ denotes the case fatality ratio for symptomatic cases.
+
+The basic reproduction number, ${\cal{R}}_0$, characterize the strength of an epidemic in an otherwise susceptible population:
+\begin{equation}
+{\cal{R}}_{0}= p {\cal{R}}_a + (1-p) {\cal{R}}_s.
+\end{equation}
+Then, the \emph{intrinsic} proportion of asymptomatic $z$ and symptomatic $1-z$ transmission is equal to their relative contribution toward the basic reproduction number, 
+\begin{eqnarray}
+z &=& p {\cal{R}}_a/{\cal{R}}_{0},\\
+1-z &=& (1-p) {\cal{R}}_s/{\cal{R}}_{0}.
+\end{eqnarray}
+Then, the \emph{intrinsic} generation-interval distribution depends on the intrinsic proportion of asymptomatic vs.~symptomatic transmission and their corresponding \emph{intrinsic} generation-interval distributions:
+\begin{equation}
+g(\tau) = z g_a(\tau) + (1-z) g_s(\tau),
+\end{equation}
+which allows us to express incidence of infection as a renewal process that depends on previous incidence:
+\begin{equation}
+i(t) = {\cal{R}}_{0} \int_0^\infty i(t-\tau) g(\tau) \mathrm{d} \tau.
+\end{equation}
+Yet, this information is not sufficient to disentangle the role of asymptomatic cases, i.e., what fraction of secondary cases can be ascribed to \emph{realized} transmission from asymptomatic cases vs.~symptomatic cases?
+
+The number of infected cases is expected to increase exponentially at rate $r$ at the outset of an outbreak. We note that, in practice, counted cases may largely be of the symptomatic type. 
+Hence, we ask: is the expected ratio of incidence caused by asymptomatic cases vs.~symptomatic cases during the outbreak phase the same or different than $z/(1-z)$?
+The ratio of secondary case production caused by asymptomatic vs.~symptomatic individuals during the exponential phase should be
+\begin{equation}
+\frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{\int_0^\infty \exp(-r\tau) g_a(\tau) \mathrm{d}\tau}{\int_0^\infty \exp(-r\tau) g_s(\tau) \mathrm{d}\tau}\right],
+\label{eq.qratio}
+\end{equation}
+where $q$ is the fraction of new secondary cases caused by asymptomatic individuals or `relevance' of asymptomatic cases. 
+The value of $q$ is an unknown feature of outbreaks at the population scale, distinct from $p$ the probability of becoming asymptomatic upon infection or $z$ the intrinsic proportion of asymptomatic transmission.
+
+Assuming that the intrinsic generation-interval distributions for asymptomatic and symptomatic cases follow gamma distributions with different means, $\bar G_a$ and  $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$. 
+Then, we have
+\begin{equation}
+\frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{(1 + \kappa_s r \bar G_s)^{1/\kappa_s}}{(1 + \kappa_a r \bar G_a)^{1/\kappa_a}}\right].
+\label{eq.gammaratio}
+\end{equation}
+As is apparent from Eq.~\req{eq.qratio}, relevance $q$ increases with $z$, i.e., with both $p$ and $\mathcal R_a/\mathcal R_s$. The consequences for outbreak potential further depends on the relative lengths of generation intervals as well as the relative amount of dispersions in them.
 
 %The basic reproduction number, ${\cal{R}}_0$,
 %characterize the strength of an epidemic outbreak in an other
@@ -92,34 +140,34 @@ and $f$ denotes the case fatality ratio for symptomatic cases.
 %than expected. Yet the relevance of asymptomatic cases
 %depends on their realized proportion at a population level.
 
-The number of infected cases is expected
-to increase exponentially at rate $r$ at the outset of an outbreak.  We note
-that, in practice,
-counted cases may largely be of the symptomatic type. 
-Hence, we ask: is the expected ratio of $I_a/I_s$ 
-during the outbreak phase the same or different
-than $p/(1-p)$?  In other words, is the ratio of asymptomatic to symptomatic cases population-wide approximately equal to the ratio of asymptomatic to symptomatic cases generated by newly exposed individuals?
-To answer this question, note that the equations
-for the infectious cases can be rewritten given the ansatz
-$E(t)=c_e e^{rt}$,
-$I_a(t)=c_a e^{rt}$,
-$I_s(t)=c_s e^{rt}$,
-given the prefactors $c_e$, $c_a$, and $c_s$
-such that
-\begin{eqnarray}
-r c_a&=&p\gamma_e c_e-\gamma_a c_a,\\
-r c_s&=&(1-p)\gamma_e c_e-\gamma_s c_s,
-\end{eqnarray} 
-which implies that
+%The number of infected cases is expected
+%to increase exponentially at rate $r$ at the outset of an outbreak.  We note
+%that, in practice,
+%counted cases may largely be of the symptomatic type. 
+%Hence, we ask: is the expected ratio of $I_a/I_s$ 
+%during the outbreak phase the same or different
+%than $p/(1-p)$?  In other words, is the ratio of asymptomatic to symptomatic cases population-wide approximately equal to the ratio of asymptomatic to symptomatic cases generated by newly exposed individuals?
+%To answer this question, note that the equations
+%for the infectious cases can be rewritten given the ansatz
+%$E(t)=c_e e^{rt}$,
+%$I_a(t)=c_a e^{rt}$,
+%$I_s(t)=c_s e^{rt}$,
+%given the prefactors $c_e$, $c_a$, and $c_s$
+%such that
+%\begin{eqnarray}
+%r c_a&=&p\gamma_e c_e-\gamma_a c_a,\\
+%r c_s&=&(1-p)\gamma_e c_e-\gamma_s c_s,
+%\end{eqnarray} 
+%which implies that
 %\begin{eqnarray}
 %c_a(r+\gamma_a)&=&p\gamma_e c_e,\\
 %c_s(r+\gamma_s)&=&(1-p)\gamma_e c_e.
 %\end{eqnarray} 
 %Taking the ratio of these two equations yieldds
-\begin{equation}
-\frac{c_a}{c_s}=\frac{p}{1-p}\left[\frac{r+\gamma_s}{r+\gamma_a}\right].
-\label{eq.relevance}
-\end{equation}
+%\begin{equation}
+%\frac{c_a}{c_s}=\frac{p}{1-p}\left[\frac{r+\gamma_s}{r+\gamma_a}\right].
+%\label{eq.relevance}
+%\end{equation}
 %Alternatively, this same equation can be written as:
 %\begin{equation}
 %\frac{c_a}{c_s}=\frac{p}{1-p}\left[\frac{1+\tau/T_s}{1+\tau/T_a}\right]
@@ -127,46 +175,35 @@ which implies that
 %where $\tau$ is the characteristic time of exponential case increase,
 %$T_s$ is the average period of symptomatic infectious periods,
 %and $T_a$ is the average period of asymptomatic infectious periods. 
-Hence, we conclude that, during the exponential
-growth phase, the intrinsic
-ratio of asymptomatic to symptomatic cases ($p/(1-p)$) may differ from
-the realized ratio at the population level ($c_a/c_s$).  
-%This difference
+%Hence, we conclude that, during the exponential
+%growth phase, the intrinsic
+%ratio of asymptomatic to symptomatic cases ($p/(1-p)$) may differ from
+%the realized ratio at the population level ($c_a/c_s$).  
+%%This difference
 %suggests that additional steps are required to link asymptomatic features
 %at the individual to the population scale, i.e., by including
 %the unknown transmission rates, $\beta_a$ and $\beta_s$.
-Indeed, the ratio of secondary case production caused by asymptomatic vs.~symptomatic
-individuals during the exponential phase should be
-\begin{equation}
-\frac{q}{1-q} = \left(\frac{\beta_a}{\beta_s}\right)\frac{p}{1-p}\left[\frac{r+\gamma_s}{r+\gamma_a}\right],
-\label{eq.qratio}
-\end{equation}
-where $q$ is the fraction of new secondary cases caused by
-asymptomatic individuals or `relevance' of asymptomatic cases.
-The value of $q$ is an unknown feature of
-outbreaks at the population scale, distinct from $p$ the probability of becoming
-asymptomatic upon infection. 
-As is apparent from Eq.~\req{eq.qratio}, relevance increases
-with both $p$ and $\beta_a/\beta_s$. However, the consequences
-for outbreak potential depends on the relative duration of infectiousness.
+%Indeed, the ratio of secondary case production caused by asymptomatic vs.~symptomatic
+%individuals during the exponential phase should be
+%\begin{equation}
+%\frac{q}{1-q} = \left(\frac{\beta_a}{\beta_s}\right)\frac{p}{1-p}\left[\frac{r+\gamma_s}{r+\gamma_a}\right],
+%\label{eq.qratio}
+%\end{equation}
+%where $q$ is the fraction of new secondary cases caused by
+%asymptomatic individuals or `relevance' of asymptomatic cases.
+%The value of $q$ is an unknown feature of
+%outbreaks at the population scale, distinct from $p$ the probability of becoming
+%asymptomatic upon infection. 
+%As is apparent from Eq.~\req{eq.qratio}, relevance increases
+%with both $p$ and $\beta_a/\beta_s$. However, the consequences
+%for outbreak potential depends on the relative duration of infectiousness.
 
-Here, given $1/r=7$ days, $1/\gamma_e=4$ days, and
-$1/\gamma_s=10$ days, we evaluate the impacts of $p$ and $\beta_a/\beta_s$ on the
-relevance of asymptomatic infections, given variation in 
-$p$, $\beta_a/\beta_s$, and $\gamma_a$.  We consider two
-scenarios, one in which asymptomatic infectiousness is short, i.e., with
-average duration of $1/\gamma_a=5$ days,
-and one in which asymptomatic infectiousness is long,i.e., $1/\gamma_a=20$ days.
-We use the renewal equation formalism to explicitly link duration of infectiousness to the 
-basic reproductive number (for technical details and example 
-applications see~\citep{wallinga2007generation,weitz_scirep2015,champredon_2018}).
-In brief, we
-infer ${\cal{R}}_0$ compatible with an estimated value of $r$ from case
-data given the generation interval distribution 
-(set by $q$ and the duration in the exposed and infectious states).
-By solving for $q$, we can then relate the basic
-reproduction number to the relative transmission rates ($\beta_a/\beta_s$)
-and the probability, $p$, of asymptomatic cases at the individual scale.
+Here, given $1/r=7$ days, $\bar G_s=6$ days, and $\kappa_s=0.5$, we evaluate the impacts of intrinsic proportion of asymptomatic transmission $z$ on the realized relevance of asymptomatic infection, given variation in relative mean generation interval $\bar G_a/\bar G_s$ and relative generation-interval dispersion $\kappa_a/\kappa_s$ of asymptomatic cases.
+We vary $\bar G_a/\bar G_s$ and $\kappa_a/\kappa_s$ from 0.5 to 1.5, one at a time, and infer $q$ as well as ${\cal{R}}_0$ compatible with an estimated value of $r$ from case data given the generation interval distributions of asymptomatic and asymptomatic cases.
+Across the ranges of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.relevance}A,C).
+When the mean asymptomatic generation interval is longer than the mean symptomatic generation interval, $q$ decreases because short generation intervals (thus, faster infection) drive transmission events during the growth phase.
+On the other hand, assuming a wider asymptomatic generation interval (higher $\kappa_a$) increases $q$ because 
+
 Figure~\ref{fig.relevance}C shows that
 when $\gamma_a<\gamma_s$, then the strength ${\cal{R}}_0$ increases
 with $q$. 
@@ -185,6 +222,42 @@ ${\cal{R}}_0\approx 3.1$ in a model with no secondary
 case production from asymptomatic infections (see filled
 circle at bottom left of Figure~\ref{fig.relevance}C-D.
 In other words, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
+
+%Here, given $1/r=7$ days, $1/\gamma_e=4$ days, and
+%$1/\gamma_s=10$ days, we evaluate the impacts of $p$ and $\beta_a/\beta_s$ on the
+%relevance of asymptomatic infections, given variation in 
+%$p$, $\beta_a/\beta_s$, and $\gamma_a$.  We consider two
+%scenarios, one in which asymptomatic infectiousness is short, i.e., with
+%average duration of $1/\gamma_a=5$ days,
+%and one in which asymptomatic infectiousness is long,i.e., $1/\gamma_a=20$ days.
+%We use the renewal equation formalism to explicitly link duration of infectiousness to the 
+%basic reproductive number (for technical details and example 
+%applications see~\citep{wallinga2007generation,weitz_scirep2015,champredon_2018}).
+%In brief, we
+%infer ${\cal{R}}_0$ compatible with an estimated value of $r$ from case
+%data given the generation interval distribution 
+%(set by $q$ and the duration in the exposed and infectious states).
+%By solving for $q$, we can then relate the basic
+%reproduction number to the relative transmission rates ($\beta_a/\beta_s$)
+%and the probability, $p$, of asymptomatic cases at the individual scale.
+%Figure~\ref{fig.relevance}C shows that
+%when $\gamma_a<\gamma_s$, then the strength ${\cal{R}}_0$ increases
+%with $q$. 
+%This increase arises because asymptomatic infections that resolve
+%slower increase the duration of
+%overall generation intervals (see~\citep{park_2019practical}). In contrast,
+%Figure~\ref{fig.relevance}D show that
+%when $\gamma_a>\gamma_s$ then
+%the strength ${\cal{R}}_0$ decreases with $q$.  
+%This decrease arises because asymptomatic infections that resolve
+%faster decrease the duration of
+%overall generation intervals (again, see~\citep{park_2019practical}). In both 
+%cases, the dependence of ${\cal{R}}_0$ on $q$ is
+%compared to a baseline of 
+%${\cal{R}}_0\approx 3.1$ in a model with no secondary
+%case production from asymptomatic infections (see filled
+%circle at bottom left of Figure~\ref{fig.relevance}C-D.
+%In other words, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 
 The present findings highlight the need to characterize
 the duration of asymptomatic cases and their consequences
@@ -215,13 +288,13 @@ modulate resurgent epidemics in a networked metapopulation~\citep{watts_pnas2005
 
 \begin{figure*}[b!]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{group/figheatmap_seird_noname.pdf}
+\includegraphics[width=0.4\textwidth]{figheatmap.pdf}
 \mbox{\hspace{0.05\textwidth}}
-\includegraphics[width=0.44\textwidth]{group/figheatmap_seirdR0_noname.pdf}\\
+\includegraphics[width=0.4\textwidth]{figheatmap_R0.pdf}\\
 \mbox{}\\
-\includegraphics[width=0.4\textwidth]{group/figheatmap_seird_2_noname.pdf}
+\includegraphics[width=0.4\textwidth]{figheatmap_kappa.pdf}
 \mbox{\hspace{0.05\textwidth}}
-\includegraphics[width=0.44\textwidth]{group/figheatmap_seird_R02_noname.pdf}
+\includegraphics[width=0.4\textwidth]{figheatmap_kappa_R0.pdf}
 \caption{Relevance of asymptomatic transmission given variation in
 relative transmission and probability that a given, newly infected individual is asymptomatic.  (Top) Long duration asymptomatic cases increase ${\cal{R}}_0$ with increasing relevance.
 (Bottom) Short duration asymptomatic cases decrease ${\cal{R}}_0$ with increasing relevance.
