@@ -1,0 +1,50 @@
+\documentclass[pre,byrevtex,superscriptaddress,10pt,pdftex]{revtex4}
+
+% for full names in referenes
+\bibliographystyle{naturemag}
+
+
+\input{asymp_report_disease.settings}
+\setboolean{twocolswitch}{true}
+\setboolean{revtexswitch}{true}
+
+%%%%%%%%% author(s), address(es) plus abstract
+
+\begin{document}
+
+\title{
+  \input{asymp_report_disease.title}
+}
+
+\input{asymp_report_disease.author}
+
+\date{\today}
+
+\begin{abstract}
+  \input{asymp_report_disease.abs}  
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%% end of author(s), address(es) plus abstract
+
+\input{asymp_report_disease-short.body}
+%\input{asymp_report_disease-short.body}
+
+\input{asymp_report_disease.acknowledge}
+
+% \appendix
+
+% \input{asymp_report_disease.appendix}
+
+\input{asymp_report_disease.biblio}
+
+\end{document}
+
+
+
+
+
+
+
+

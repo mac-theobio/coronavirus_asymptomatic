@@ -10,6 +10,21 @@ current: target
 
 # Content
 
+Sources += asymp_report_disease.abs.tex asymp_report_disease.acknowledge.tex asymp_report_disease.appendix.tex asymp_report_disease.author.tex asymp_report_disease.biblio.tex asymp_report_disease.settings.tex asymp_report_disease.tex asymp_report_disease.title.tex asymp_report_disease-short.body.tex
+
+asymp_report_disease.pdf: asymp_report_disease.tex
+
+######################################################################
+
+## Making a logical place for weitz_group code and figures
+## Linking it temporarily to figures
+
+group:
+	git clone https://github.com/WeitzGroup/coronavirus_asymptomatic.git $@
+
+figures: group
+	$(LN) $< $@
+
 ######################################################################
 
 ### Makestuff
@@ -25,7 +40,7 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
-## -include makestuff/wrapR.mk
+-include makestuff/texdeps.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
