@@ -24,11 +24,14 @@ A key focus has been on estimating asymptomatic prevalence (see~\citep{mizumoto_
 %infectious? (iii) How infectious are individuals
 %with mild and/or subclinical infections relative to those
 %with severe symptoms?  
-Here, we attempt to address the impact of asymptomatic cases differently, by relating 
-individual-level features of asymptomatic cases (e.g., the probability
-of initiating an asymptomatic case, asymptomatic case duration, and
-the transmission rates from asymptomatic individuals) to dynamics at the
-population scale. That is, rather than focusing on the prevalence
+There is currently a lot of interest in the role of asymptomatic infections in COVIF for two major reasons. 
+First, the proportion of infections that are asymptomatic is critical to attempts to estimate the likely burden of severe outcomes (including mortality) when the virus spreads through a population.
+Second, understanding the possible role of \emph{transmission} by asymptomatic individuals is crucial to planning surveillance and control efforts.
+
+Here, we focus on a third effect. 
+If asymptomatic cases are important for transmission, they also have the potential to affect estimates of key epidemiological parameters. 
+Here, we investigate the relationship between individual-level features of asymptomatic cases (e.g., the probability of initiating an asymptomatic case, asymptomatic case duration, and the transmission rates from asymptomatic individuals) to dynamics at the population scale. 
+That is, rather than focusing on the prevalence
 of asymptomatic cases, we are interested in understanding the
 relevance of asymptomatic infections to secondary case production -- including
 to the production of symptomatic cases.
@@ -37,49 +40,31 @@ to the production of symptomatic cases.
 %and help characterize the relevance of asymptomatic transmission to
 %outbreak dynamics and control.
 
-To begin, consider a renewal equation variant in which incidence $i$ is divided into two categories -- $i_a$ and $i_s$ -- corresponding to incidence of asymptomatic and symptomatic cases, respectively. 
-Both types of individuals can infect others, but, they differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, as well as intrinsic generation-interval distributions, $g_a(\tau)$ and $g_s(\tau)$, reflecting their differences in the abilities to transmit and the courses of infection.
+We model viral spread using a renewal-equation framework, with incidence $i$ is divided into two categories -- $i_a$ and $i_s$ -- corresponding to incidence of asymptomatic and symptomatic cases, respectively. 
+Both types of individuals can infect others, but they differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, as well as intrinsic generation-interval distributions, $g_a(\tau)$ and $g_s(\tau)$.
 Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person \citep{svensson2007note}, depend on the natural history of infection:
-an individual with subclinical, and fast-clearing, symptoms is likely to have short generation intervals, whereas an individual with mild, but long-lasting, symptoms is likely to have long generation intervals.
-In total, the dynamics of susceptibles and incidence are:
+individuals with subclinical cases may have fast clearance and short generation intervals, or slow viral reproduction and long generation intervals.
+
+Neglecting births and loss of immunity on the time scale of the outbreak, the dynamics of susceptibles and incidence are:
 \begin{eqnarray}
 \dot{S}&=&-i(t) \\
 i(t)&=&\mathcal R_a S \int_0^\infty i_a(t-\tau) g_a(\tau) \mathrm{d}\tau + \mathcal R_s S \int_0^\infty i_s(t-\tau) g_s(\tau) \mathrm{d}\tau.
 \end{eqnarray}
-Here, $p$ is the fraction of asymptomatic cases that are generated for each infected individual ($i_a(t)= p i(t)$), and $1-p$ is the fraction of symptomatic cases that are generated for each infected individual ($i_s(t)= (1-p) i(t)$).
+Here, $p$ is the proportion of \emph{incident cases} that are asymptomatic. 
 
-%To begin, consider a SEIR model variant in which there are two infectious categories --
-%$I_a$ and $I_s$ -- corresponding to asymptomatic and symptomatic cases,
-%respectively. Both types of individuals can infect others, but,
-%only symptomatic cases can lead to fatalities, denoted
-%by the $D$ category. In total, the dynamics of susceptibles, exposed,
-%infectious, recovered, and dead are:
-%\begin{eqnarray}
-%\dot{S}&=&-\beta_a S I_a -\beta_s S I_s \\
-%\dot{E}&=&\beta_a S I_a +\beta_s S I_s -\gamma_e E\\
-%\dot{I}_a&=&p\gamma_e E-\gamma_a I_a\\
-%\dot{I}_s&=&(1-p)\gamma_e E-\gamma_s I_s\\
-%\dot{R}&=&\gamma_a I_a + (1-f)\gamma_s I_s \\
-%\dot{D}&=&f\gamma_s I_s.
-%\end{eqnarray}
-%Here, $\beta_a$ and $\beta_s$ denote transmission rates,
-%$\gamma_e$ denotes the transition from exposed to infectious,
-%$p$ is the fraction of asymptomatic cases that
-%are generated for each exposed individual,
-%$1-p$ is the fraction of symptomatic cases that
-%are generated for each exposed individual,
-%$\gamma_a$ and $\gamma_s$ denote recovery rates,
-%and $f$ denotes the case fatality ratio for symptomatic cases.
-
-The basic reproduction number, ${\cal{R}}_0$, characterize the strength of an epidemic in an otherwise susceptible population \citep{anderson1992infectious}:
+The basic reproduction number of this system \citep{anderson1992infectious} is:
 \begin{equation}
 {\cal{R}}_{0}= p {\cal{R}}_a + (1-p) {\cal{R}}_s.
 \end{equation}
-We define the intrinsic proportions of asymptomatic and symptomatic transmission as their relative contribution toward the basic reproduction number:
-\begin{eqnarray}
-z &=& p {\cal{R}}_a/{\cal{R}}_{0},\\
+We define the ``intrinsic'' proportion of asymptomatic transmission as the relative contribution of asymptomatic cases to the basic reproduction number:
+\begin{equation}
+z = p {\cal{R}}_a/{\cal{R}}_{0}
+\end{equation}
+Note that the intrinsic proportion of symptomatic transmission satisfies
+\begin{equation}
 1-z &=& (1-p) {\cal{R}}_s/{\cal{R}}_{0}.
-\end{eqnarray}
+\end{equation}
+
 Then, the intrinsic generation-interval distribution depends on the intrinsic proportion of asymptomatic vs.~symptomatic transmission and their corresponding intrinsic generation-interval distributions:
 \begin{equation}
 g(\tau) = z g_a(\tau) + (1-z) g_s(\tau),
