@@ -201,27 +201,15 @@ As is apparent from Eq.~\req{eq.qratio}, relevance $q$ increases with $z$, i.e.,
 Here, given $1/r=7$ days, $\bar G_s=6$ days, and $\kappa_s=0.5$, we evaluate the impacts of intrinsic proportion of asymptomatic transmission $z$ on the realized relevance of asymptomatic infection, given variation in relative mean generation interval $\bar G_a/\bar G_s$ and relative generation-interval dispersion $\kappa_a/\kappa_s$ of asymptomatic cases.
 We vary $\bar G_a/\bar G_s$ and $\kappa_a/\kappa_s$ from 0.5 to 1.5, one at a time, and infer $q$ as well as ${\cal{R}}_0$ compatible with an estimated value of $r$ from case data given the generation interval distributions of asymptomatic and asymptomatic cases.
 Across the ranges of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.relevance}A,C).
-When the mean asymptomatic generation interval is longer than the mean symptomatic generation interval, $q$ decreases because short generation intervals (i.e., fast transmission) drive transmission events during the growth phase.
-On the other hand, assuming a wider asymptomatic generation interval (higher $\kappa_a$) increases $q$ because the amount of short generation intervals (i.e., the proportion of faster transmission) increases.
+When the mean asymptomatic generation interval is longer than the mean symptomatic generation interval, $q$ decreases because short generation intervals (i.e., fast transmission) caused by symptomatic individuals drive the transmission during the growth phase.
+On the other hand, assuming a wide generation-interval distribution (higher $\kappa_a$) for asymptomatic individuals increases $q$ because the amount of short generation intervals (i.e., the proportion of faster transmission by asymptomatic individuals) increases.
 
-%Figure~\ref{fig.relevance}C shows that
-%when $\gamma_a<\gamma_s$, then the strength ${\cal{R}}_0$ increases
-%with $q$. 
-%This increase arises because asymptomatic infections that resolve
-%slower increase the duration of
-%overall generation intervals (see~\citep{park_2019practical}). In contrast,
-%Figure~\ref{fig.relevance}D show that
-%when $\gamma_a>\gamma_s$ then
-%the strength ${\cal{R}}_0$ decreases with $q$.  
-%This decrease arises because asymptomatic infections that resolve
-%faster decrease the duration of
-%overall generation intervals (again, see~\citep{park_2019practical}). In both 
-%cases, the dependence of ${\cal{R}}_0$ on $q$ is
-%compared to a baseline of 
-%${\cal{R}}_0\approx 3.1$ in a model with no secondary
-%case production from asymptomatic infections (see filled
-%circle at bottom left of Figure~\ref{fig.relevance}C-D.
-%In other words, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
+Figure~\ref{fig.relevance}C shows that when $\bar G_s<\bar G_a$, then the strength ${\cal{R}}_0$ increases with $z$.
+This increase arises because asymptomatic infections that have long generation intervals increase the duration of overall generation intervals (see~\citep{park_2019practical})
+Conversely, when $\bar G_a > \bar G_s$ then the strength ${\cal{R}}_0$ decreases with $z$ because short generation intervals of asymptomatic cases reduce the overall mean generation interval.
+Likewise, the amount of dispersion in the generation intervals of asymptomatic cases $\kappa_a$ affect the amount of dispersion in the overall generation intervals; 
+therefore, depending on whether $\kappa_a$ is larger or smaller than $\kappa_s$, increase in the proportion of asymptomatic transmission $z$ can either decrease or increase the strength ${\cal{R}}_0$.
+In other words, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative mean and dispersion in generation intervals of asymptomatic and symptomatic individuals.
 
 %Here, given $1/r=7$ days, $1/\gamma_e=4$ days, and
 %$1/\gamma_s=10$ days, we evaluate the impacts of $p$ and $\beta_a/\beta_s$ on the
@@ -260,7 +248,7 @@ On the other hand, assuming a wider asymptomatic generation interval (higher $\k
 %In other words, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 
 The present findings highlight the need to characterize
-the duration of asymptomatic cases and their consequences
+the course of infection of asymptomatic cases and their consequences
 not only for contact tracing but for constraining
 uncertainty in the strength of the ongoing COVID-19 outbreak~\citep{park_preprint}.
 The present findings are also consistent with
@@ -274,7 +262,7 @@ suggest the possibility that the mean generation interval for COVID-19
 could be longer than estimated from symptomatic cases alone - possibly
 increasing ${\cal{R}}_0$ and driving a larger fraction of secondary cases
 (see Figure~\ref{fig.relevance} top row).
-However, if asymptomatic cases tend to be shorter, then
+However, if asymptomatic cases tend to have shorter infection, then
 current estimates of ${\cal{R}}_0$ may be over-estimates of the
 underlying strength (see Figure~\ref{fig.relevance} bottom row).
 Finally, it is important to note we focused here on the exponential
@@ -296,23 +284,23 @@ modulate resurgent epidemics in a networked metapopulation~\citep{watts_pnas2005
 \mbox{\hspace{0.05\textwidth}}
 \includegraphics[width=0.4\textwidth]{figheatmap_kappa_R0.pdf}
 \caption{Relevance of asymptomatic transmission given variation in
-relative transmission and probability that a given, newly infected individual is asymptomatic.  (Top) Long duration asymptomatic cases increase ${\cal{R}}_0$ with increasing relevance.
-(Bottom) Short duration asymptomatic cases decrease ${\cal{R}}_0$ with increasing relevance.
-Technically, renewal equations provide a route to connect
-observed increases in case counts, i.e., ${\cal{R}}_0 = \frac{1}{M(-r)}$
-where $M(-r)=\int_0^{\infty}\mathrm{d} a e^{-ra}g(a)$.
-For the present model,
-$M(r)=qM_E(-r)M_{I_a}(-r)+(1-q)M_E(-r)M_{I_s}(-r)$
-where each of the component functions are $M_E(-r)=\frac{\gamma_e}{\gamma_e+r}$,
-$M_{I_a}(-r)=\frac{\gamma_a}{\gamma_a+r}$, 
-$M_{I_s}(-r)=\frac{\gamma_s}{\gamma_s+r}$,
-and $q$ is the fraction of realized new secondary cases caused by
-asymptomatic individuals.  In all of these heatmaps, $\gamma_e=1/4$,
-$\gamma_s=1/10$, and $r=1/7$. Here, the average duration
-in symptomatic and asymptomatic states are $T_s=1/\gamma_s$ and 
-$T_a=1/\gamma_a$, respectively. Here the filled circle denotes ${\cal{R}}_0\approx 3.12$
-in the event of $p=0$ and $\beta_a=0$, and the open symbols are for $\beta_a/\beta_s=0.5$ and 
-$p=0.5$ and $p=0.9$ for reference.
+probability that a given, newly infected individual is asymptomatic. (Top) Long/short generation intervals of asymptomatic cases increase/decrease ${\cal{R}}_0$ with decreasing/increasing relevance.
+(Bottom) Wide/narrow generation intervals of asymptomatic cases decrease/increase ${\cal{R}}_0$ with increasing/decreasing relevance.
+% Technically, renewal equations provide a route to connect
+% observed increases in case counts, i.e., ${\cal{R}}_0 = \frac{1}{M(-r)}$
+% where $M(-r)=\int_0^{\infty}\mathrm{d} a e^{-ra}g(a)$.
+% For the present model,
+% $M(r)=qM_E(-r)M_{I_a}(-r)+(1-q)M_E(-r)M_{I_s}(-r)$
+% where each of the component functions are $M_E(-r)=\frac{\gamma_e}{\gamma_e+r}$,
+% $M_{I_a}(-r)=\frac{\gamma_a}{\gamma_a+r}$, 
+% $M_{I_s}(-r)=\frac{\gamma_s}{\gamma_s+r}$,
+% and $q$ is the fraction of realized new secondary cases caused by
+% asymptomatic individuals.  In all of these heatmaps, $\gamma_e=1/4$,
+% $\gamma_s=1/10$, and $r=1/7$. Here, the average duration
+% in symptomatic and asymptomatic states are $T_s=1/\gamma_s$ and 
+% $T_a=1/\gamma_a$, respectively. Here the filled circle denotes ${\cal{R}}_0\approx 3.12$
+% in the event of $p=0$ and $\beta_a=0$, and the open symbols are for $\beta_a/\beta_s=0.5$ and 
+% $p=0.5$ and $p=0.9$ for reference.
 %Renewal equations provide a route to connect
 %observed increases in case counts, i.e.,
 %\begin{equation}
