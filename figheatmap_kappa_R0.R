@@ -27,7 +27,8 @@ g0 <- ggplot(figdata) +
   geom_raster(aes(relkappa, z, fill=R0)) +
   geom_contour(aes(relkappa, z, z=R0), col="white") +
   scale_x_log10("Relative asymptomatic generation-interval dispersion", expand=c(0, 0),
-                     breaks=c(0.5, 1, 2)) +
+                breaks=c(0.5, 1, 2),
+                limits=c(0.5, 2)) +
   scale_y_continuous("Intrinsic proportion of asymptomatic transmission", expand=c(0, 0),
                      limits=c(0, 1),
                      breaks=0:10/10) +
