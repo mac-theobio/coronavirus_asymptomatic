@@ -2,12 +2,12 @@ library(emdbook)
 library(ggplot2); theme_set(theme_bw())
 
 r <- 1/7
-G_s <- 6
+G_s <- 7
 kappa_s <- 0.5
 kappa_a <- 0.5
 
 z <- seq(0.01, 0.99, by=0.005)
-relG <- seq(0.5, 1.5, by=0.005)
+relG <- exp(seq(log(0.5), log(2), by=0.005))
 
 qodds <- apply2d(
   "*", 
@@ -26,8 +26,8 @@ figdata <- data.frame(
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=q)) +
   geom_contour(aes(relG, z, z=q), col="white") +
-  scale_x_continuous("Relative mean asymptomatic generation interval", expand=c(0, 0),
-                     breaks=3:7*2/10) +
+  scale_x_log10("Relative mean asymptomatic generation interval", expand=c(0, 0),
+                     breaks=c(0.5, 1, 2)) +
   scale_y_continuous("Intrinsic proportion of asymptomatic transmission", expand=c(0, 0),
                      limits=c(0, 1),
                      breaks=0:10/10) +
