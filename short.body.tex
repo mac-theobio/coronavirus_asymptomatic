@@ -39,7 +39,7 @@ to the production of symptomatic cases.
 
 To begin, consider a renewal equation variant in which incidence $i$ is divided into two categories -- $i_a$ and $i_s$ -- corresponding to incidence of asymptomatic and symptomatic cases, respectively. 
 Both types of individuals can infect others, but, they differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, as well as intrinsic generation-interval distributions, $g_a(\tau)$ and $g_s(\tau)$, reflecting their differences in the abilities to transmit and the courses of infection.
-Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person, depend on the natural history of infection:
+Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person \citep{svensson2007note}, depend on the natural history of infection:
 an individual with subclinical, and fast-clearing, symptoms is likely to have short generation intervals, whereas an individual with mild, but long-lasting, symptoms is likely to have long generation intervals.
 In total, the dynamics of susceptibles and incidence are:
 \begin{eqnarray}
@@ -71,7 +71,7 @@ Here, $p$ is the fraction of asymptomatic cases that are generated for each infe
 %$\gamma_a$ and $\gamma_s$ denote recovery rates,
 %and $f$ denotes the case fatality ratio for symptomatic cases.
 
-The basic reproduction number, ${\cal{R}}_0$, characterize the strength of an epidemic in an otherwise susceptible population:
+The basic reproduction number, ${\cal{R}}_0$, characterize the strength of an epidemic in an otherwise susceptible population \citep{anderson1992infectious}:
 \begin{equation}
 {\cal{R}}_{0}= p {\cal{R}}_a + (1-p) {\cal{R}}_s.
 \end{equation}
@@ -199,16 +199,16 @@ As is apparent from Eq.~\req{eq.qratio}, relevance $q$ increases with $z$, i.e.,
 %for outbreak potential depends on the relative duration of infectiousness.
 
 Here, given $1/r=7$ days, $\bar G_s=6$ days, and $\kappa_s=0.5$, we evaluate the impacts of intrinsic proportion of asymptomatic transmission $z$ on the realized relevance of asymptomatic infection, given variation in relative mean generation interval $\bar G_a/\bar G_s$ and relative generation-interval dispersion $\kappa_a/\kappa_s$ of asymptomatic cases.
-We vary $\bar G_a/\bar G_s$ and $\kappa_a/\kappa_s$ from 0.5 to 1.5, one at a time, and infer $q$ as well as ${\cal{R}}_0$ compatible with an estimated value of $r$ from case data given the generation interval distributions of asymptomatic and asymptomatic cases.
+We vary $\bar G_a/\bar G_s$ and $\kappa_a/\kappa_s$ between 0.5 and 1.5 one at a time, and infer $q$ and ${\cal{R}}_0$ compatible with an estimated value of $r$ from case data given the generation interval distributions of asymptomatic and asymptomatic cases.
 Across the ranges of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.relevance}A,C).
-When the mean asymptomatic generation interval is longer than the mean symptomatic generation interval, $q$ decreases because short generation intervals (i.e., fast transmission) caused by symptomatic individuals drive the transmission during the growth phase.
-On the other hand, assuming a wide generation-interval distribution (higher $\kappa_a$) for asymptomatic individuals increases $q$ because the amount of short generation intervals (i.e., the proportion of faster transmission by asymptomatic individuals) increases.
+When the mean asymptomatic generation interval is longer than the mean symptomatic generation interval, $q$ decreases because short generation intervals (i.e., fast transmission) caused by symptomatic individuals drive the transmission during the growth phase (Figure~\ref{fig.relevance}A).
+On the other hand, assuming a wide generation-interval distribution (higher $\kappa_a$) for asymptomatic individuals increases $q$ because the amount of short generation intervals (i.e., the proportion of faster transmission by asymptomatic individuals) increases (Figure~\ref{fig.relevance}C).
 
 Figure~\ref{fig.relevance}C shows that when $\bar G_s<\bar G_a$, then the strength ${\cal{R}}_0$ increases with $z$.
 This increase arises because asymptomatic infections that have long generation intervals increase the duration of overall generation intervals (see~\citep{park_2019practical})
 Conversely, when $\bar G_a > \bar G_s$ then the strength ${\cal{R}}_0$ decreases with $z$ because short generation intervals of asymptomatic cases reduce the overall mean generation interval.
 Likewise, the amount of dispersion in the generation intervals of asymptomatic cases $\kappa_a$ affect the amount of dispersion in the overall generation intervals; 
-therefore, depending on whether $\kappa_a$ is larger or smaller than $\kappa_s$, increase in the proportion of asymptomatic transmission $z$ can either decrease or increase the strength ${\cal{R}}_0$.
+therefore, depending on whether $\kappa_a$ is larger or smaller than $\kappa_s$, increase in the proportion of asymptomatic transmission $z$ can either decrease or increase the strength ${\cal{R}}_0$ (Figure~\ref{fig.relevance}D).
 In other words, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative mean and dispersion in generation intervals of asymptomatic and symptomatic individuals.
 
 %Here, given $1/r=7$ days, $1/\gamma_e=4$ days, and
