@@ -23,7 +23,7 @@ figdata <- data.frame(
   relG=rep(relG, each=length(z))
 )
 
-example_p <- 0.35
+example_p <- 0.18
 example_R_a <- 0.5
 example_R_s <- 1
 example_z <- example_p * example_R_a/(1-example_p)
@@ -37,8 +37,8 @@ example_q2 <- example_qodds2/(1+example_qodds2)
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=q)) +
   geom_contour(aes(relG, z, z=q), col="white") +
-  geom_hline(yintercept=example_z, col="black", lwd=1) +
-  geom_point(aes(x=1, y=example_z, fill=example_q2), size=5, col="black", shape=21, stroke=1) +
+  geom_hline(yintercept=example_z, col="red", lwd=1) +
+  geom_point(aes(x=1, y=example_z, fill=example_q2), size=5, col="red", shape=21, stroke=1) +
   scale_x_log10(expression(paste("Relative mean asymptomatic generation interval, ", italic(G[a]/G[s]))), expand=c(0, 0),
                      breaks=c(0.5, 1, 2)) +
   scale_y_continuous(expression(paste("Intrinsic proportion of asymptomatic transmission, ", italic(z))), expand=c(0, 0),

@@ -23,7 +23,7 @@ figdata <- data.frame(
   relG=rep(relG, each=length(z))
 )
 
-example_p <- 0.35
+example_p <- 0.18
 example_R_a <- 0.5
 example_R_s <- 1
 example_z <- example_p * example_R_a/(1-example_p)
@@ -34,10 +34,10 @@ range(example_R0)
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=R0)) +
   geom_contour(aes(relG, z, z=R0), col="white") +
-  geom_hline(yintercept=example_z, col="black", lwd=1) +
-  geom_point(aes(x=1, y=example_z, fill=example_R02), size=5, col="black", shape=21, stroke=1) +
-  geom_text(aes(x=1*1.5, y=example_z+0.05, label="underestimated")) +
-  geom_text(aes(x=1/1.5, y=example_z+0.05, label="overestimated")) +
+  geom_hline(yintercept=example_z, col="red", lwd=1) +
+  geom_point(aes(x=1, y=example_z, fill=example_R02), size=5, col="red", shape=21, stroke=1) +
+  geom_text(aes(x=1*1.5, y=example_z+0.05, label="underestimated"), col="red") +
+  geom_text(aes(x=1/1.5, y=example_z+0.05, label="overestimated"), col="red") +
   scale_x_log10(expression(paste("Relative mean asymptomatic generation interval, ", italic(G[a]/G[s]))), expand=c(0, 0),
                 breaks=c(0.5, 1, 2),
                 limits=c(0.5, 2)) +
