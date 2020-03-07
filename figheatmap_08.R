@@ -2,7 +2,7 @@ library(emdbook)
 library(ggplot2); theme_set(theme_bw(base_family = "Times"))
 
 r <- 1/7
-G_s <- 7
+G_s <- 8
 kappa_s <- 0.8
 kappa_a <- 0.8
 

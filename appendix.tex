@@ -58,7 +58,7 @@ where
 {\cal{R}}_a &=& \frac{\beta_a}{\gamma_a},\\
 {\cal{R}}_s &=& \frac{\beta_s}{\gamma_s}.
 \end{eqnarray}
-The generation-interval distributions for asymptomatic and symptomatic individuals follow the same functional form as the corresponding generation-interval distribution for a single-type SEIR model since both asymptomatic and symptomatic individuals have exponenitally distributed latent and infectious periods \citep{svensson2015influence}:
+The generation-interval distributions for asymptomatic and symptomatic individuals follow the same functional form as the corresponding generation-interval distribution for a single-type SEIR model since both asymptomatic and symptomatic individuals have exponentially distributed latent and infectious periods \citep{svensson2015influence}:
 \begin{eqnarray}
 g_a(\tau) &=& \frac{\gamma_e \gamma_a}{\gamma_e - \gamma_a} \left(\exp(-\gamma_a \tau) - \exp(-\gamma_e \tau)\right),\\
 g_s(\tau) &=& \frac{\gamma_e \gamma_s}{\gamma_e - \gamma_s} \left(\exp(-\gamma_s \tau) - \exp(-\gamma_e \tau)\right).
@@ -80,8 +80,8 @@ where $z = p {\cal{R}}_a/{\cal{R}}_{0}$ and $1-z=(1-p) {\cal{R}}_s/{\cal{R}}_{0}
 \includegraphics[width=0.4\textwidth]{figheatmap_R0_03.pdf}
 \caption{Effects of intrinsic proportion of asymptomatic transmission on the relevance of asymptomatic transmission and basic reproduction number, given variation in
 the mean generation interval of asymptomatic cases when generation-interval distributions are narrow. 
+We vary $G_a/G_s$ while assuming $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.3$.
 See Figure 1 in the main text for figure caption.
-Here, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=\kappa_a=0.3$.
 }
 \end{center}
 \end{figure*}
@@ -95,8 +95,8 @@ Here, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=\kappa_a=0.3$.
 \includegraphics[width=0.4\textwidth]{figheatmap_R0_08.pdf}
 \caption{Effects of intrinsic proportion of asymptomatic transmission on the relevance of asymptomatic transmission and basic reproduction number, given variation in
 the mean generation interval of asymptomatic cases when generation-interval distributions are wide. 
+We vary $G_a/G_s$ while assuming $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.8$.
 See Figure 1 in the main text for figure caption.
-Here, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=\kappa_a=0.8$.
 }
 \end{center}
 \end{figure*}
@@ -112,7 +112,9 @@ Here, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=\kappa_a=0.8$.
 the generation-interval dispersion of asymptomatic cases.
 (A) Wide/narrow generation intervals of asymptomatic cases increase/decrease the relevance of asymptomatic cases, $q$.
 (B) Wide/narrow generation intervals of asymptomatic cases decrease/increase the basic reproduction number ${\cal{R}}_0$.
-As our baseline parameters, we assume $1/r=7$ days, $\bar G_s=G_a=7$ days, and $\kappa_s=0.5$.}
+We vary $\kappa_a/\kappa_s$ while assuming $1/r=7$ days, $\bar G_s=\bar G_a=8$ days, and $\kappa_s=0.5$.
+The solid, white lines represent the contours.
+}
 \end{center}
 \end{figure*}
 

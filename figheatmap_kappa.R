@@ -2,8 +2,8 @@ library(emdbook)
 library(ggplot2); theme_set(theme_bw(base_family = "Times"))
 
 r <- 1/7
-G_s <- 7
-G_a <- 7
+G_s <- 8
+G_a <- 8
 kappa_s <- 0.5
 
 z <- seq(0.01, 0.99, by=0.005)

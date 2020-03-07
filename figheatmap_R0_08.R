@@ -2,7 +2,7 @@ library(emdbook)
 library(ggplot2); theme_set(theme_bw(base_family = "Times"))
 
 r <- 1/7
-G_s <- 7
+G_s <- 8
 kappa_s <- 0.8
 kappa_a <- 0.8
 
@@ -33,8 +33,8 @@ g0 <- ggplot(figdata) +
                      limits=c(0, 1),
                      breaks=0:10/10) +
   scale_fill_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a", "#f9f871", "#f5f3b5"),
-                       limits=c(1.5, 5),
-                       breaks=c(1.5, 2.5, 3.5, 4.5)) +
+                       limits=c(1.5, 6),
+                       breaks=c(1.5, 2.5, 3.5, 4.5, 5.5)) +
   ggtitle("B. Basic reproduction number") +
   theme(
     legend.title = element_blank(),
