@@ -32,9 +32,9 @@ g0 <- ggplot(figdata) +
   scale_y_continuous(expression(paste("Intrinsic proportion of asymptomatic transmission, ", italic(z))), expand=c(0, 0),
                      limits=c(0, 1),
                      breaks=0:10/10) +
-  scale_fill_gradientn(colors=c("#2B4162", "#40E0D0", "#FF8C00", "#FF0080"),
-                       limits=c(1.5, 3.5),
-                       breaks=c(1.5, 2, 2.5, 3.0, 3.5)) +
+  scale_fill_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a", "#f9f871", "#f5f3b5"),
+                       limits=c(1.5, 5),
+                       breaks=c(1.5, 2.5, 3.5, 4.5)) +
   ggtitle("B. Basic reproduction number") +
   theme(
     legend.title = element_blank(),
