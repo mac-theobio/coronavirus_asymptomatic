@@ -7,6 +7,7 @@
 \subsection*{A compartmental model for asymptomatic/symptomatic cases}
 
 Consider an SEIR model variant in which an infected individual can be either asymptomatic, $I_a$, or symptomatic, $I_s$.
+We note that $I_a$ and $I_s$ represent prevalence (i.e., the total number of currently infectious individuals) of asymptomatic and symptomatic individuals; these quantities are different from $i_s$ and $i_s$ that we present in the main text, which represent incidence (i.e., the rate at which new cases are generated)  of asymptomatic and symptomatic individuals.
 While both cases can recover, we assume that only symptomatic cases can lead to fatalities, denoted
 by the $D$ category.
 In total, the dynamics of susceptibles, exposed, infectious, recovered, and dead are:
@@ -41,7 +42,8 @@ which implies that
 \begin{equation}
 \frac{c_a}{c_s}=\frac{p}{1-p}\left[\frac{r+\gamma_s}{r+\gamma_a}\right].
 \end{equation}
-Therefore, the ratio of secondary case production caused by asymptomatic vs.~symptomatic
+The prevalence of asymptomatic and symptomatic individuals is different from $p$ and $1-p$ because prevalence measures the individuals that are currently infectious and does not account for individuals that have already recovered.
+Finally, the ratio of secondary case production caused by asymptomatic vs.~symptomatic
 individuals during the exponential phase should be
 \begin{equation}
 \frac{q}{1-q} = \left(\frac{\beta_a}{\beta_s}\right)\frac{p}{1-p}\left[\frac{r+\gamma_s}{r+\gamma_a}\right],
