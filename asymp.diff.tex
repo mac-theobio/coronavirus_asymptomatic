@@ -1,0 +1,64 @@
+\documentclass[pre,byrevtex,superscriptaddress,12pt,pdftex]{revtex4}
+
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+% for full names in referenes
+\bibliographystyle{naturemag}
+
+\input{settings.tex}
+\setboolean{twocolswitch}{true}
+\setboolean{revtexswitch}{true}
+
+%%%%%%%%% author(s), address(es) plus abstract
+
+\begin{document}
+
+\title{
+  \input{title.tex}
+}
+
+\input{author.tex}
+
+\date{\today}
+
+\begin{abstract}
+  \input{abs.tex}  
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%% end of author(s), address(es) plus abstract
+
+\input{short.body.diff.tex}
+
+\input{acknowledge.tex}
+
+\input{appendix.tex}
+
+\bibliography{coronavirus.bib}
+
+\end{document}
+
+
+
+
+
+
+
+

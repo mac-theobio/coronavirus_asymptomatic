@@ -6,7 +6,7 @@
 
 \subsection*{A compartmental model for asymptomatic/symptomatic cases}
 
-Consider a SEIR model variant in which an infected individual can be either asymptomatic, $I_a$, or symptomatic, $I_s$.
+Consider an SEIR model variant in which an infected individual can be either asymptomatic, $I_a$, or symptomatic, $I_s$.
 While both cases can recover, we assume that only symptomatic cases can lead to fatalities, denoted
 by the $D$ category.
 In total, the dynamics of susceptibles, exposed, infectious, recovered, and dead are:
@@ -73,7 +73,37 @@ where $z = p {\cal{R}}_a/{\cal{R}}_{0}$ and $1-z=(1-p) {\cal{R}}_s/{\cal{R}}_{0}
 
 \subsection*{Supplementary figures}
 
-\begin{figure*}[b!]
+\begin{figure*}[!ht]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figheatmap_02.pdf}
+\mbox{\hspace{0.05\textwidth}}
+\includegraphics[width=0.4\textwidth]{figheatmap_R0_02.pdf}
+\caption{Effects of intrinsic proportion of asymptomatic transmission on the relevance of asymptomatic transmission and basic reproduction number, given variation in
+the mean generation interval of asymptomatic cases when generation-interval distributions are narrow. 
+See Figure 1 in the main text for figure caption.
+Here, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=\kappa_a=0.2$.
+}
+\end{center}
+\end{figure*}
+
+\pagebreak
+
+\begin{figure*}[!ht]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figheatmap_08.pdf}
+\mbox{\hspace{0.05\textwidth}}
+\includegraphics[width=0.4\textwidth]{figheatmap_R0_08.pdf}
+\caption{Effects of intrinsic proportion of asymptomatic transmission on the relevance of asymptomatic transmission and basic reproduction number, given variation in
+the mean generation interval of asymptomatic cases when generation-interval distributions are wide. 
+See Figure 1 in the main text for figure caption.
+Here, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=\kappa_a=0.8$.
+}
+\end{center}
+\end{figure*}
+
+\pagebreak
+
+\begin{figure*}[!ht]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{figheatmap_kappa.pdf}
 \mbox{\hspace{0.05\textwidth}}
@@ -82,8 +112,7 @@ where $z = p {\cal{R}}_a/{\cal{R}}_{0}$ and $1-z=(1-p) {\cal{R}}_s/{\cal{R}}_{0}
 the generation-interval dispersion of asymptomatic cases.
 (A) Wide/narrow generation intervals of asymptomatic cases increase/decrease the relevance of asymptomatic cases, $q$.
 (B) Wide/narrow generation intervals of asymptomatic cases decrease/increase the basic reproduction number ${\cal{R}}_0$.
-Here, we vary relative generation-interval dispersion of asymptomatic cases, $\kappa_a/\kappa_s$, while assuming $G_a = G_s$.
-As our baseline parameters, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=0.5$.}
+As our baseline parameters, we assume $1/r=7$ days, $\bar G_s=G_a=7$ days, and $\kappa_s=0.5$.}
 \end{center}
 \end{figure*}
 
