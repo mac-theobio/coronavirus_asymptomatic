@@ -35,7 +35,7 @@ g0 <- ggplot(figdata) +
   scale_fill_gradientn(colors=c("#2B4162", "#40E0D0", "#FF8C00", "#FF0080"),
                        limits=c(1.5, 4),
                        breaks=c(1.5, 2, 2.5, 3.0, 3.5, 4)) +
-  ggtitle("D. Basic reproduction number") +
+  ggtitle("B. Basic reproduction number") +
   theme(
     legend.title = element_blank(),
     legend.key.height = unit(1.8, "cm")

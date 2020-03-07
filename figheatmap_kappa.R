@@ -35,7 +35,7 @@ g0 <- ggplot(figdata) +
   scale_fill_gradientn(colors=c("#2B4162", "#40E0D0", "#FF8C00", "#FF0080"),
                        limits=c(0, 1),
                        breaks=0:5*2/10) +
-  ggtitle("C. Relevance of asymptomatic cases") +
+  ggtitle("A. Relevance of asymptomatic cases") +
   theme(
     legend.title = element_blank(),
     legend.key.height = unit(1.8, "cm")

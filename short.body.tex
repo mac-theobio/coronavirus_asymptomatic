@@ -178,6 +178,23 @@ We vary $\bar G_a/\bar G_s$ and $\kappa_a/\kappa_s$ between 0.5 and 2 one at a t
 
 \section{Results}
 
+\begin{figure*}[b!]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figheatmap.pdf}
+\mbox{\hspace{0.05\textwidth}}
+\includegraphics[width=0.4\textwidth]{figheatmap_R0.pdf}
+\caption{Effects of intrinsic proportion of asymptomatic transmission on the relevance of asymptomatic transmission and basic reproduction number, given variation in
+the mean generation interval of asymptomatic cases. 
+(A) Long/short generation intervals of asymptomatic cases decrease/increase the relevance of asymptomatic cases, $q$.
+(B) Long/short generation intervals of asymptomatic cases increase/decrease the basic reproduction number ${\cal{R}}_0$.
+(C) Wide/narrow generation intervals of asymptomatic cases increase/decrease the relevance of asymptomatic cases, $q$.
+(D) Wide/narrow generation intervals of asymptomatic cases decrease/increase the basic reproduction number ${\cal{R}}_0$.
+Here, we vary relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, while assuming $\kappa_a = \kappa_s$.
+As our baseline parameters, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=0.5$.
+\label{fig.relevance}}
+\end{center}
+\end{figure*}
+
 Across the ranges of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.relevance}A,C).
 As the relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, increases, $q$ decreases because symptomatic cases are more likely to have short generation intervals (i.e., fast transmission events), which drive the spread during the growth phase (Figure~\ref{fig.relevance}A).
 On the other hand, as the relative generation-interval dispersion of asymptomatic cases, $\kappa_a/\kappa_s$, increases, $q$ also increases because the amount of short asymptomatic generation intervals (i.e., the proportion of faster transmission by asymptomatic individuals) increases (Figure~\ref{fig.relevance}C).
@@ -238,65 +255,6 @@ Finally, it is important to note we focused here on the exponential phase, but t
 Future work might also consider the ways in which asymptomatic individuals modulate resurgent epidemics in a networked metapopulation~\citep{watts_pnas2005}.
 Characterizing the role of asymptomatic individuals in driving the persistence of the epidemic will be critical for assessing the post-pandemic outcome \citep{lipsitch_preprint}.
 
-\begin{figure*}[b!]
-\begin{center}
-\includegraphics[width=0.4\textwidth]{figheatmap.pdf}
-\mbox{\hspace{0.05\textwidth}}
-\includegraphics[width=0.4\textwidth]{figheatmap_R0.pdf}\\
-\mbox{}\\
-\includegraphics[width=0.4\textwidth]{figheatmap_kappa.pdf}
-\mbox{\hspace{0.05\textwidth}}
-\includegraphics[width=0.4\textwidth]{figheatmap_kappa_R0.pdf}
-\caption{Relevance of asymptomatic transmission given variation in
-probability that a given, newly infected individual is asymptomatic. 
-(A) Long/short generation intervals of asymptomatic cases decrease/increase the relevance of asymptomatic cases, $q$.
-(B) Long/short generation intervals of asymptomatic cases increase/decrease the basic reproduction number ${\cal{R}}_0$.
-(C) Wide/narrow generation intervals of asymptomatic cases increase/decrease the relevance of asymptomatic cases, $q$.
-(D) Wide/narrow generation intervals of asymptomatic cases decrease/increase the basic reproduction number ${\cal{R}}_0$.
-For panels A--B, we vary relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, while assuming $\kappa_a = \kappa_s$.
-For panels C--D, we vary relative generation-interval dispersion of asymptomatic cases, $\kappa_a/\kappa_s$, while assuming $G_a = G_s$.
-As our baseline parameters, we assume $1/r=7$ days, $\bar G_s=7$ days, and $\kappa_s=0.5$.
-% Technically, renewal equations provide a route to connect
-% observed increases in case counts, i.e., ${\cal{R}}_0 = \frac{1}{M(-r)}$
-% where $M(-r)=\int_0^{\infty}\mathrm{d} a e^{-ra}g(a)$.
-% For the present model,
-% $M(r)=qM_E(-r)M_{I_a}(-r)+(1-q)M_E(-r)M_{I_s}(-r)$
-% where each of the component functions are $M_E(-r)=\frac{\gamma_e}{\gamma_e+r}$,
-% $M_{I_a}(-r)=\frac{\gamma_a}{\gamma_a+r}$, 
-% $M_{I_s}(-r)=\frac{\gamma_s}{\gamma_s+r}$,
-% and $q$ is the fraction of realized new secondary cases caused by
-% asymptomatic individuals.  In all of these heatmaps, $\gamma_e=1/4$,
-% $\gamma_s=1/10$, and $r=1/7$. Here, the average duration
-% in symptomatic and asymptomatic states are $T_s=1/\gamma_s$ and 
-% $T_a=1/\gamma_a$, respectively. Here the filled circle denotes ${\cal{R}}_0\approx 3.12$
-% in the event of $p=0$ and $\beta_a=0$, and the open symbols are for $\beta_a/\beta_s=0.5$ and 
-% $p=0.5$ and $p=0.9$ for reference.
-%Renewal equations provide a route to connect
-%observed increases in case counts, i.e.,
-%\begin{equation}
-%{\cal{R}}_0 = \frac{1}{M(-r)}
-%\end{equation}
-%where $r$ is the speed of the disease spread and 
-%$M(r)$ is related to 
-%$g(a)$ (the normalized age of transmission) such that 
-%\begin{equation}
-%M(r)=\int_0^{\infty}\mathrm{d} a e^{ra}g(a).
-%\end{equation}
-%For the present model, the moment generating function is
-%\begin{equation}
-%M(r)=qM_E(r)M_{I_a}(r)+(1-q)M_E(r)M_{I_s}(r)
-%\end{equation}
-%where each of the component functions are $M_E(-r)=\frac{\gamma_e}{\gamma_e+r}$,
-%$M_{I_a}(-r)=\frac{\gamma_a}{\gamma_a+r}$, 
-%$M_{I_s}(-r)=\frac{\gamma_s}{\gamma_s+r}$,
-%and $q$ is the fraction of realized new secondary cases caused by
-%asymptomatic individuals. 
-%The relevance $q$ is an unknown feature of
-\label{fig.relevance}}
-\end{center}
-\end{figure*}
-
- 
 %We also note that efforts to characterize asymptomatic tranissmion
 %should consider its effect on
 %the basic reproduction number, which for this SEIR coronavirus-like model is ${\cal{R}}_0=p\left(\frac{\beta_a}{\gamma_a}\right)+ (1-p)\left(\frac{\beta_s}{\gamma_s}\right).$
