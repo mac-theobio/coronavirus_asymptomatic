@@ -4,6 +4,23 @@
 \setcounter{figure}{0}
 \setcounter{equation}{0}
 
+\subsection*{A gamma approximation to generation-interval distributions}
+
+Assuming that the intrinsic generation-interval distribution for each class (asymptomatic and symptomatic) follows a gamma distribution with mean $\bar G_c$ and dispersion $\kappa_c$, the average discount of a new infection can be written as:
+\begin{equation}
+\delta_c = (1 + \kappa_c r \bar G_c)^{-1/\kappa_c},
+\end{equation}
+which shows that the average discount increases with smaller $\bar G_c$ and with larger $\kappa_c$.
+Then, the odds of the realized proportion of asymptomatic transmission can be written as:
+\begin{equation}
+\frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{(1 + \kappa_s r \bar G_s)^{1/\kappa_s}}{(1 + \kappa_a r \bar G_a)^{1/\kappa_a}}\right],
+\end{equation}
+where $\bar G_a$ and $\bar G_s$ are the mean generation intervals for asymptomatic and symptomatic cases, and $\kappa_a$ and $\kappa_s$ are the generation-interval dispersions for asymptomatic and symptomatic cases.
+Finally, the basic reproduction number is calculated by
+\begin{equation}
+\mathcal R_0 = \left(z (1 + \kappa_a r \bar G_a)^{-1/\kappa_a} + (1-z) (1 + \kappa_s r \bar G_s)^{-1/\kappa_s}\right)^{-1}.
+\end{equation}
+
 \subsection*{A compartmental model for asymptomatic/symptomatic cases}
 
 Consider an SEIR model variant in which an infected individual can be either asymptomatic, $I_a$, or symptomatic, $I_s$.
