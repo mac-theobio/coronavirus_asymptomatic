@@ -68,7 +68,10 @@ This ``effective'' generation interval depends both on the mean generation inter
 We explore the effects of different assumptions about speed and effectiveness of asymptomatic transmission on the importance of asymptomatic transmission and estimates of the basic reproduction number ${\cal{R}}_0$.
 We parameterize the generation interval distributions of asymptomatic and symptomatic cases based on their means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, assuming that they follow gamma distributions (see Appendix).
 We assume that epidemic growth rate $r$ and the generation-interval distribution of symptomatic case are known using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=0.5$; for simplicity, we assume $\kappa_s=\kappa_a$ but relax this assumption in Appendix.
-We then vary the ratio of generation intervals $\bar G_a/\bar G_s$ from 0.5 and 2, and infer values of $q$ and ${\cal{R}}_0$ compatible with an estimated growth rate $r$ given the generation interval distributions of asymptomatic and symptomatic cases using the Euler-Lotka equation (Appendix).
+We then vary the ratio of generation intervals $\bar G_a/\bar G_s$ from 0.5 and 2, and infer values of $q$ using Eq.~\req{eq.qratio} and ${\cal{R}}_0$ using the Euler-Lotka equation:
+\begin{equation}
+\frac{1}{\mathcal R_0} = \int \exp(-\r tau) g(\tau) \mathrm{d} \tau.
+\end{equation
 
 \section{Results}
 
