@@ -1,6 +1,7 @@
 \usepackage{amsmath,epsfig,enumerate,graphicx}
 \usepackage{verbatim}
 \usepackage{amstext}
+\usepackage{color}
 
 % table adjustments
 \setlength{\tabcolsep}{1.5\tabcolsep}
@@ -13,6 +14,9 @@
 \usepackage{ifthen}
 \newboolean{twocolswitch}
 \newboolean{revtexswitch}
+
+\newcommand{\authorcomment}[3]{\textcolor{#1}{\textbf{[#2: }\textsl{#3}\textbf{]}}}
+\newcommand{\jd}[1]{\authorcomment{cyan}{JD}{#1}}
 
 \newcommand{\Ai}[1]{#1}
 \newcommand{\yes}{}
