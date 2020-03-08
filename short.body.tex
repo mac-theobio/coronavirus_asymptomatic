@@ -45,7 +45,7 @@ Note that the intrinsic proportion of symptomatic transmission satisfies
 \end{equation}
 Yet, this information is not sufficient to disentangle the role of asymptomatic cases, i.e., what fraction of secondary cases can be ascribed to \emph{realized} transmission from asymptomatic cases vs.~symptomatic cases?
 
-The intrinsic proporton of asymptomatic transmission $z$ is a useful benchmark, but does not necessarily reflect the realized proportion of asymptomatic transmission, unless both types of infection have the same generation-interval distribution.
+The intrinsic proportion of asymptomatic transmission $z$ is a useful benchmark, but does not necessarily reflect the realized proportion of asymptomatic transmission, unless both types of infection have the same generation-interval distribution.
 The \emph{realized} proportion of asymptomatic transmission, $q$ at time $t$ is given by:
 \begin{equation}
 \frac{q}{1-q}=\frac{\mathcal R_a S(t) \int_0^\infty i_a(t-\tau) g_a(\tau) \mathrm{d}\tau}{\mathcal R_s S(t) \int_0^\infty i_s(t-\tau) g_s(\tau) \mathrm{d}\tau},
@@ -64,13 +64,13 @@ Thus, the realized proportion of asymptomatic infections will be increased (resp
 The discount $\delta$ also depends on the relative variation in the generation-interval distribution, the ``dispersion'': more variation in generation intervals leads to more opportunities for fast spread and thus to higher values of $\delta$ (similar to shorter average generation intervals). 
 
 To estimate the effects of assumptions about asymptomatic transmission on the importance of asymptomatic transmission and estimates of the basic reproduction number ${\cal{R}}_0$, we parameterize the generation interval distributions of asymptomatic and symptomatic cases based on their means, $\bar G_a$ and $\bar G_s$, and dispersions, $\kappa_a$ and $\kappa_s$.
-We assume that generation intervals are gamma distributed, and we set the dispersion to be equal to the squared coefficient of variation (the reciprocal of the gamma shape parameter, see Appendix).
+We assume that generation intervals are gamma distributed, and we set the dispersion to be equal to the squared coefficient of variation (the reciprocal of the gamma shape parameter, see Supplementary Materials).
 We assume that epidemic growth rate $r$ and the generation-interval distribution of symptomatic case are known, using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=0.5$.
 We infer values of $q$ using Eq.~\req{eq.qratio} and ${\cal{R}}_0$ using the Euler-Lotka equation \citep{lotka1907relation}:
 \begin{equation}
 \frac{1}{\mathcal R_0} = \int \exp(-r \tau) g(\tau) \mathrm{d} \tau.
 \end{equation}
-In the supplementary material, we also use ODEs to give a concrete example of how differences in generation intervals affect both $q$ and estimates of $\mathcal R_0$.
+In Supplementary Materials, we also use an ordinary differential equation model to give a concrete example of how differences in generation intervals affect both $q$ and estimates of $\mathcal R_0$.
 
 \section{Results}
 
@@ -96,7 +96,7 @@ As the relative mean generation interval of asymptomatic transmission, $\bar G_a
 
 Figure~\ref{fig.importance}B shows the effect of different assumptions about the generation interval of asymptomatic cases, $\bar G_a$, on the basic reproduction number ${\cal{R}}_0$.
 When $\bar G_a$ is long compared to $\bar G_s$, then we are effectively assuming a longer mean for the overall generation interval. 
-This assumption leads to a larger estimate of \Ro\ for i fixed value of $r$. (see~\citep{park_2019practical}).
+This assumption leads to a larger estimate of \Ro\ for a fixed value of $r$. (see~\citep{park_2019practical}).
 Conversely, when $\bar G_a < \bar G_s$, generation intervals are shorter, leading to lower estimates of the epidemic strength \Ro. Both of these effects are stronger when the intrinsic proportion of asymptomatic transmission $z$ increases (and disappear as $z\to0$).
 Therefore, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread (white, dashed line in Figure~\ref{fig.importance}B), it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 The qualitative effects of $z$ and $\bar G_a/\bar G_s$ on $q$ and ${\cal{R}}_0$ remain robust when we assume narrower ($\kappa_s = \kappa_a = 0.3$; Figure~S1) or wider ($\kappa_s = \kappa_a = 0.8$; Figure~S2) generation intervals.
