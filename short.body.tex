@@ -48,10 +48,18 @@ The \emph{realized} proportion of asymptomatic transmission, $q$ at time $t$ is 
 \end{equation}
 During the period of exponential growth, we assume $S$ remains nearly constant, and $i(t)$ is proportional to $\exp(r t)$, and simplify: 
 \begin{equation}
-\frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{\int_0^\infty \exp(-r\tau) g_a(\tau) \mathrm{d}\tau}{\int_0^\infty \exp(-r\tau) g_s(\tau) \mathrm{d}\tau}\right].
+\frac{q}{1-q}=\left(\frac{z}{1-z}\right)\frac{\delta_a}{\delta_s}.
 \label{eq.qratio}
 \end{equation}
+Here, $\delta_c$ for each of the two classes is the average ``discount'' of a new infection -- the average relative contribution of a secondary infection to the epidemic, taking exponential growth into account:
+\begin{equation}
+	\delta_c = \int_0^\infty \exp(-r\tau) g_c(\tau) \mathrm{d}\tau.
+\end{equation}
+$\delta_c<1$ and grows smaller as the ``effective'' generation interval grows longer.
+Thus, the realized proportion of asymptomatic infections will be increased (resp., decreased) if transmission is relatively faster (slower) along the asymptomatic route.
+This ``effective'' generation interval depends both on the mean generation interval and on the relative variation in the generation-interval distribution, the ``dispersion'': more variation in generation intervals leads to more opportunities for fast spread and thus to shorter effective generation intervals.
 
+\jd{Lose this \P. Move what's needed about gamma approximation to supp. We also need some text somewhere in main about how we use this approximation (and about how others do, both implicitly and explicitly).}
 In order to understand how the shape of asymptomatic and symptomatic generation-interval distributions affects $q$ and $\mathcal R_0$, we summarize the distributions in terms of their means and dispersions.
 Assuming that the intrinsic generation-interval distributions for asymptomatic and symptomatic cases follow gamma distributions \citep{park_2019practical} with different means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, 
 we have
