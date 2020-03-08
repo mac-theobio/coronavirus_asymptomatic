@@ -31,7 +31,11 @@ The basic reproduction number of this system is:
 {\cal{R}}_{0}= p {\cal{R}}_a + (1-p) {\cal{R}}_s,
 \end{equation}
 where $p$ is the proportion of \emph{incident cases} that are asymptomatic: $i_a(t) = p i(t)$.
-We define the ``intrinsic'' proportion of asymptomatic transmission as the relative contribution of asymptomatic cases to the basic reproduction number:
+The corresponding intrinsic generation-interval distribution of an average infected individual is given by: 
+\begin{equation}
+g(\tau) = z g_a(\tau) + (1-z) g_s(\tau),
+\end{equation}
+where we define the ``intrinsic'' proportion of asymptomatic transmission $z$ as the relative contribution of asymptomatic cases to the basic reproduction number:
 \begin{equation}
 z = p {\cal{R}}_a/{\cal{R}}_{0}.
 \end{equation}
@@ -59,16 +63,12 @@ $\delta_c<1$ and grows smaller as the ``effective'' generation interval grows lo
 Thus, the realized proportion of asymptomatic infections will be increased (resp., decreased) if transmission is relatively faster (slower) along the asymptomatic route.
 This ``effective'' generation interval depends both on the mean generation interval and on the relative variation in the generation-interval distribution, the ``dispersion'': more variation in generation intervals leads to more opportunities for fast spread and thus to shorter effective generation intervals.
 
-\jd{Lose this \P. Move what's needed about gamma approximation to supp. We also need some text somewhere in main about how we use this approximation (and about how others do, both implicitly and explicitly).}
-In order to understand how the shape of asymptomatic and symptomatic generation-interval distributions affects $q$ and $\mathcal R_0$, we summarize the distributions in terms of their means and dispersions.
-Assuming that the intrinsic generation-interval distributions for asymptomatic and symptomatic cases follow gamma distributions \citep{park_2019practical} with different means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, 
-we have
-\begin{equation}
-\frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{(1 + \kappa_s r \bar G_s)^{1/\kappa_s}}{(1 + \kappa_a r \bar G_a)^{1/\kappa_a}}\right].
-\label{eq.gammaratio}
-\end{equation}
-As is apparent from Eq.~\req{eq.qratio}, relevance $q$ increases with $z$, i.e., with both $p$ and $\mathcal R_a/\mathcal R_s$. The consequences for outbreak potential further depends on the relative lengths of generation intervals as well as the relative amount of dispersions in them.
-In Supplementary Materials, we use a compartmental ordinary differential equation model to show that the duration of infectious period of asymptomatic individuals affects both $q$ and $\mathcal R_0$, which is a special case of Eq.~\req{eq.qratio}; we also show that prevalence of asymptomatic/symptomatic cases differs from $p$ and $1-p$.
+\swp{Need to put this somewhere: In Supplementary Materials, we use a compartmental ordinary differential equation model to show that the duration of infectious period of asymptomatic individuals affects both $q$ and $\mathcal R_0$, which is a special case of Eq.~\req{eq.qratio}; we also show that prevalence of asymptomatic/symptomatic cases differs from $p$ and $1-p$.}
+
+We explore the effects of different assumptions about speed and effectiveness of asymptomatic transmission on the importance of asymptomatic transmission and estimates of the basic reproduction number ${\cal{R}}_0$.
+We parameterize the generation interval distributions of asymptomatic and symptomatic cases based on their means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, assuming that they follow gamma distributions (see Appendix).
+We assume that epidemic growth rate $r$ and the generation-interval distribution of symptomatic case are known using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=0.5$; for simplicity, we assume $\kappa_s=\kappa_a$ but relax this assumption in Appendix.
+We then vary the ratio of generation intervals $\bar G_a/\bar G_s$ from 0.5 and 2, and infer values of $q$ and ${\cal{R}}_0$ compatible with an estimated growth rate $r$ given the generation interval distributions of asymptomatic and symptomatic cases using the Euler-Lotka equation (Appendix).
 
 \section{Results}
 
@@ -87,9 +87,6 @@ Here, we assume $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
 \label{fig.importance}}
 \end{center}
 \end{figure*}
-
-We explore the effects of different assumptions about duration and effectiveness of asymptomatic transmission on the importance of asymptomatic transmission and estimates of the basic reproduction number ${\cal{R}}_0$. In particular, we vary assumptions about intrinsic proportion of asymptomatic transmission $z$ and its mean generation interval $\bar G_a$, using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
-We vary the ratio of generation intervals $\bar G_a/\bar G_s$ from 0.5 and 2, and infer values of $q$ and ${\cal{R}}_0$ compatible with an estimated growth rate $r$ from case data given the generation interval distributions of asymptomatic and symptomatic cases.
 
 Across the range of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.importance}A).
 As the relative mean generation interval of asymptomatic transmission, $\bar G_a/\bar G_s$, increases, $q$ decreases because symptomatic cases are more likely to have short generation intervals (i.e., fast transmission events), which drive the spread during the growth phase (Figure~\ref{fig.importance}A).
