@@ -4,13 +4,8 @@ In an epidemic, symptomatic cases are the predominant focus of treatment and usu
 However, infected individuals who are asymptomatic yet infectious can be a critical factor in the spread of some pathogens \citep{fraser2004factors}.
 Asymptomatic individuals are hard to trace, unlikely to self-isolate, and are likely to retain normal social and travel patterns.
 
-\jd{Delete this \P\ and roll the citations appropriately into the next one.}
-The COVID-19 outbreak has raised significant
-questions regarding the role of asymptomatic cases~\citep{fauci_nejm2020}.
-A key focus has been on estimating asymptomatic prevalence (see~\citep{mizumoto_2020}), e.g., what fraction of individuals have asymptomatic infections relative to those with symptomatic infections?
- 
-There is significant ongoing interest in asymptomatic infections in COVID-19 for two major reasons. 
-First, the proportion of infections that are asymptomatic is critical to attempts to estimate the likely burden of severe outcomes (including mortality) when the virus spreads through a population.
+There is significant ongoing interest in asymptomatic infections in COVID-19 for two major reasons~\citep{fauci_nejm2020}. 
+First, the proportion of infections that are asymptomatic (see~\citep{mizumoto_2020}) is critical to attempts to estimate the likely burden of severe outcomes (including mortality) when the virus spreads through a population.
 Second, understanding the possible role of \emph{transmission} by asymptomatic individuals is crucial to planning surveillance and control efforts.
 
 Here, we focus on a third effect. 
@@ -21,7 +16,7 @@ Thus, we investigate the relationship between individual-level features of asymp
 
 We model viral spread using a renewal-equation framework \citep{heesterbeek1996concept}, which allows us to model the current incidence of infected individuals (i.e., the the rate at which new infections occur in the population) as a function of previous incidence and how infectiousness of an infected individual varies over the course of their infection.
 We divide incidence $i$ into two categories -- $i_a$ and $i_s$ -- corresponding to incidence of asymptomatic and symptomatic cases, respectively.
-Newly infected individuals that are either asymptomatically or symptomatically infected can transmit the disease to others, but they differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, respectively, as well as intrinsic generation-interval distributions, $g_a(\tau)$ and $g_s(\tau)$.
+Newly infected individuals that are either asymptomatically or symptomatically infected can transmit the disease to others, but they differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, respectively, as well as intrinsic generation-interval distributions \citep{champredon2015intrinsic}, $g_a(\tau)$ and $g_s(\tau)$.
 Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person \citep{svensson2007note}, depend on the natural history of infection:
 individuals with subclinical infections may have fast clearance and short generation intervals, or slow viral reproduction and long generation intervals (cf. \citep{roberts2007model}).
 The shape of the generation-interval distribution characterizes the relationship between the epidemic growth rate $r$ and the reproduction number \citep{wallinga2007generation}.
@@ -44,18 +39,6 @@ Note that the intrinsic proportion of symptomatic transmission satisfies
 \begin{equation}
 1-z = (1-p) {\cal{R}}_s/{\cal{R}}_{0}.
 \end{equation}
-
-
-\jd{Where should we citect champredon2015intrinsic if I delete the stuff below?}
-
-The intrinsic generation-interval distribution \citep{champredon2015intrinsic} depends on the intrinsic proportion of asymptomatic vs.~symptomatic transmission and their corresponding intrinsic generation-interval distributions:
-\begin{equation}
-g(\tau) = z g_a(\tau) + (1-z) g_s(\tau),
-\end{equation}
-which allows us to express incidence of infection as a renewal process that depends on previous incidence:
-\begin{equation}
-i(t) = {\cal{R}}_{0} S(t) \int_0^\infty i(t-\tau) g(\tau) \mathrm{d} \tau.
-\end{equation}
 Yet, this information is not sufficient to disentangle the role of asymptomatic cases, i.e., what fraction of secondary cases can be ascribed to \emph{realized} transmission from asymptomatic cases vs.~symptomatic cases?
 
 The intrinsic proporton of asymptomatic transmission $z$ is a useful benchmark, but does not necessarily reflect the realized proportion of asymptomatic transmission, unless both types of infection have the same generation-interval distribution.
@@ -68,8 +51,6 @@ During the period of exponential growth, we assume $S$ remains nearly constant, 
 \frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{\int_0^\infty \exp(-r\tau) g_a(\tau) \mathrm{d}\tau}{\int_0^\infty \exp(-r\tau) g_s(\tau) \mathrm{d}\tau}\right].
 \label{eq.qratio}
 \end{equation}
-
-\jd{Hi, Daniel!}
 
 In order to understand how the shape of asymptomatic and symptomatic generation-interval distributions affects $q$ and $\mathcal R_0$, we summarize the distributions in terms of their means and dispersions.
 Assuming that the intrinsic generation-interval distributions for asymptomatic and symptomatic cases follow gamma distributions \citep{park_2019practical} with different means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, 
