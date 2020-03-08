@@ -82,9 +82,9 @@ In the supplementary material, we also use ODEs to give a concrete example of ho
 \caption{Effects of intrinsic proportion of asymptomatic transmission on the realized proportion of asymptomatic transmission and basic reproduction number, given variation in
 the mean generation interval of asymptomatic cases. 
 (A) Increasing the speed of asymptomatic transmission (shorter generation intervals) increases the importance of asymptomatic cases in transmission, $q$.
-(B) Long/short generation intervals of asymptomatic cases increase/decrease the basic reproduction number ${\cal{R}}_0$.
-Depending on whether $\bar G_a$ is smaller (left side of the white, dashed line) or bigger (right side of the white, dashed line) than $\bar G_s$, naive estimate that does not explicitly account for asymptomatic transmission (white, dashed line) over- or under-estimates the true $\mathcal R_0$.
-The white, solid lines represent the contour lines.
+(B) Increasing generation intervals of asymptomatic cases increases the basic reproduction number ${\cal{R}}_0$; 
+When $\bar G_a$ is smaller (larger) than $\bar G_s$, estimates based on the observed generation distribution for symptomatic cases (dashed line) are expected to over- (under-) estimate the true $\mathcal R_0$.
+Solid lines show contours for \Ro\ values. 
 Here, we assume $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
 \label{fig.importance}}
 \end{center}
@@ -94,15 +94,14 @@ We explore the effects of different assumptions about speed and effectiveness of
 Across the range of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.importance}A).
 As the relative mean generation interval of asymptomatic transmission, $\bar G_a/\bar G_s$, increases, $q$ decreases because symptomatic cases are more likely to have short generation intervals (i.e., fast transmission events), which drive the spread during the growth phase (Figure~\ref{fig.importance}A).
 
-Figure~\ref{fig.importance}B compares the effect of relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, on the basic reproduction number ${\cal{R}}_0$.
-When $\bar G_s < \bar G_a$, then ${\cal{R}}_0$ increases with $z$.
-This increase arises because asymptomatic infections that have long generation intervals increase the mean of overall generation intervals (see~\citep{park_2019practical}).
-Conversely, when $\bar G_s > \bar G_a$ then the strength ${\cal{R}}_0$ decreases with $z$ because short generation intervals of asymptomatic cases reduce the overall mean generation interval.
+Figure~\ref{fig.importance}B shows the effect of different assumptions about the generation interval of asymptomatic cases, $\bar G_a$, on the basic reproduction number ${\cal{R}}_0$.
+When $\bar G_a$ is long compared to $\bar G_s$, then we are effectively assuming a longer mean for the overall generation interval. 
+This assumption leads to a larger estimate of \Ro\ for i fixed value of $r$. (see~\citep{park_2019practical}).
+Conversely, when $\bar G_a < \bar G_s$, generation intervals are shorter, leading to lower estimates of the epidemic strength \Ro. Both of these effects are stronger when the intrinsic proportion of asymptomatic transmission $z$ increases (and disappear as $z\to0$).
 Therefore, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread (white, dashed line in Figure~\ref{fig.importance}B), it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 The qualitative effects of $z$ and $\bar G_a/\bar G_s$ on $q$ and ${\cal{R}}_0$ remain robust when we assume narrower ($\kappa_s = \kappa_a = 0.3$; Figure~S1) or wider ($\kappa_s = \kappa_a = 0.8$; Figure~S2) generation intervals.
 
-Relative generation-interval dispersion of asymptomatic cases $\kappa_a/\kappa_s$ also have qualitatively similar effects on $q$ and ${\cal{R}}_0$.
-When the asymptomatic cases have a wider/narrower generation-interval distribution, higher intrinsic proportion of asymptomatic transmission $z$ increases/decreases the realized proportion of asymptomatic transmission $q$ but decreases/increases the basic reproduction number (Figure~S3).
+Relative generation-interval dispersion of asymptomatic cases $\kappa_a/\kappa_s$ have similar, but smaller, effects on $q$ and ${\cal{R}}_0$ (Figure~S3).
 Since a wider generation-interval distribution has a higher proportion of early transmission than a narrow one, increasing the generation-interval dispersion has qualitatively similar effects on $q$ and ${\cal{R}}_0$ as decreasing the mean generation interval.
 
 \section{Discussion}
