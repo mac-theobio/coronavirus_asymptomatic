@@ -59,19 +59,17 @@ Here, $\delta_c$ for each of the two classes is the average ``discount'' of a ne
 \begin{equation}
 	\delta_c = \int_0^\infty \exp(-r\tau) g_c(\tau) \mathrm{d}\tau.
 \end{equation}
-$\delta_c<1$ and grows smaller as the ``effective'' generation interval grows longer.
+$\delta_c<1$ and grows smaller as the generation interval grows longer.
 Thus, the realized proportion of asymptomatic infections will be increased (resp., decreased) if transmission is relatively faster (slower) along the asymptomatic route.
-This ``effective'' generation interval depends both on the mean generation interval and on the relative variation in the generation-interval distribution, the ``dispersion'': more variation in generation intervals leads to more opportunities for fast spread and thus to shorter effective generation intervals.
-
-\swp{Need to put this somewhere: In Supplementary Materials, we use a compartmental ordinary differential equation model to show that the duration of infectious period of asymptomatic individuals affects both $q$ and $\mathcal R_0$, which is a special case of Eq.~\req{eq.qratio}; we also show that prevalence of asymptomatic/symptomatic cases differs from $p$ and $1-p$.}
+The discount $\delta$ also depends on the relative variation in the generation-interval distribution, the ``dispersion'': more variation in generation intervals leads to more opportunities for fast spread and thus to higher values of $\delta$ (similar to shorter average generation intervals). In the supplementary material, we use ODEs to give a concrete example of how differences in generation intervals affect both $q$ and estimates of $\mathcal R_0$.
 
 We explore the effects of different assumptions about speed and effectiveness of asymptomatic transmission on the importance of asymptomatic transmission and estimates of the basic reproduction number ${\cal{R}}_0$.
 We parameterize the generation interval distributions of asymptomatic and symptomatic cases based on their means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, assuming that they follow gamma distributions (see Appendix).
 We assume that epidemic growth rate $r$ and the generation-interval distribution of symptomatic case are known using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=0.5$; for simplicity, we assume $\kappa_s=\kappa_a$ but relax this assumption in Appendix.
 We then vary the ratio of generation intervals $\bar G_a/\bar G_s$ from 0.5 and 2, and infer values of $q$ using Eq.~\req{eq.qratio} and ${\cal{R}}_0$ using the Euler-Lotka equation:
 \begin{equation}
-\frac{1}{\mathcal R_0} = \int \exp(-\r tau) g(\tau) \mathrm{d} \tau.
-\end{equation
+\frac{1}{\mathcal R_0} = \int \exp(-r \tau) g(\tau) \mathrm{d} \tau.
+\end{equation}
 
 \section{Results}
 
