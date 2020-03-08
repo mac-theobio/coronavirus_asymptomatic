@@ -36,7 +36,7 @@ g0 <- ggplot(figdata) +
   geom_contour(aes(relG, z, z=R0), col="white", bins=9) +
   geom_vline(xintercept=1, lty=2, col="white", lwd=0.8) +
   # geom_hline(yintercept=example_z, col="red", lwd=1) +
-  geom_point(aes(x=1, y=example_z, fill=example_R02), size=5, col="white", stroke=1, shape=21) +
+  # geom_point(aes(x=1, y=example_z, fill=example_R02), size=5, col="white", stroke=1, shape=21) +
   annotate(geom="text", x=1*sqrt(2), y=0.03, label="underestimated", col="white") +
   annotate(geom="text", x=1/sqrt(2), y=0.03, label="overestimated", col="white") +
   scale_x_log10(expression(paste("Relative mean asymptomatic generation interval, ", italic(G[a]/G[s]))), expand=c(0, 0),

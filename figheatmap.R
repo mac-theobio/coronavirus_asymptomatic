@@ -38,7 +38,7 @@ g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=q)) +
   geom_contour(aes(relG, z, z=q), col="white") +
   # geom_hline(yintercept=example_z, col="red", lwd=1) +
-  geom_point(aes(x=1, y=example_z, fill=example_q2), size=5, col="white", shape=1, stroke=1) +
+  # geom_point(aes(x=1, y=example_z, fill=example_q2), size=5, col="white", shape=1, stroke=1) +
   scale_x_log10(expression(paste("Relative mean asymptomatic generation interval, ", italic(G[a]/G[s]))), expand=c(0, 0),
                      breaks=c(0.5, 1, 2)) +
   scale_y_continuous(expression(paste("Intrinsic proportion of asymptomatic transmission, ", italic(z))), expand=c(0, 0),

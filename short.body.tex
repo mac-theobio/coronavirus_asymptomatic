@@ -72,7 +72,7 @@ Assuming that the incidence grows exponentially during the outbreak phase (i.e.,
 The value of $q$ is an unknown feature of outbreaks at the population scale, distinct from $p$ the probability of becoming asymptomatic upon infection or $z$ the intrinsic proportion of asymptomatic transmission.
 
 In order to understand how the shape of asymptomatic and symptomatic generation-interval distributions affects $q$ and $\mathcal R_0$, we summarize the distributions in terms of their means and dispersions.
-Assuming that the intrinsic generation-interval distributions for asymptomatic and symptomatic cases follow gamma distributions with different means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$ \citep{park_2019practical}, 
+Assuming that the intrinsic generation-interval distributions for asymptomatic and symptomatic cases follow gamma distributions \citep{park_2019practical} with different means, $\bar G_a$ and $\bar G_s$, and dispersions (represented by squared coefficients of variations), $\kappa_a$ and $\kappa_s$, 
 we have
 \begin{equation}
 \frac{q}{1-q}=\left(\frac{z}{1-z}\right)\left[\frac{(1 + \kappa_s r \bar G_s)^{1/\kappa_s}}{(1 + \kappa_a r \bar G_a)^{1/\kappa_a}}\right].
@@ -92,8 +92,7 @@ In Supplementary Materials, we use a compartmental ordinary differential equatio
 the mean generation interval of asymptomatic cases. 
 (A) Long/short generation intervals of asymptomatic cases decrease/increase the relevance of asymptomatic cases, $q$.
 (B) Long/short generation intervals of asymptomatic cases increase/decrease the basic reproduction number ${\cal{R}}_0$.
-Depending on whether $G_a$ is smaller (left side of the white, dashed line) or bigger (right side of the white, dashed line) than $G_s$, naive estimate that does not explicitly account for asymptomatic transmission over- or under-estimates the true $\mathcal R_0$.
-The white circles represent the baseline value at $p=0.18$ and $\mathcal R_a = 0.5 \mathcal R_s$.
+Depending on whether $\bar G_a$ is smaller (left side of the white, dashed line) or bigger (right side of the white, dashed line) than $\bar G_s$, naive estimate that does not explicitly account for asymptomatic transmission (white, dashed line) over- or under-estimates the true $\mathcal R_0$.
 The white, solid lines represent the contour lines.
 Here, we assume $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
 \label{fig.relevance}}
@@ -109,15 +108,8 @@ Figure~\ref{fig.relevance}B compares the effect of relative mean generation inte
 When $\bar G_s < \bar G_a$, then ${\cal{R}}_0$ increases with $z$.
 This increase arises because asymptomatic infections that have long generation intervals increase the mean of overall generation intervals (see~\citep{park_2019practical}).
 Conversely, when $\bar G_s > \bar G_a$ then the strength ${\cal{R}}_0$ decreases with $z$ because short generation intervals of asymptomatic cases reduce the overall mean generation interval.
+Therefore, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread (white, dashed line in Figure~\ref{fig.relevance}B), it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 The qualitative effects of $z$ and $\bar G_a/\bar G_s$ on $q$ and ${\cal{R}}_0$ remain robust when we assume narrower ($\kappa_s = \kappa_a = 0.3$; Figure~S1) or wider ($\kappa_s = \kappa_a = 0.8$; Figure~S2) generation intervals.
-
-As an example, we assume that 18\% of the newly infected cases are asymptomatic \citep{mizumoto_2020} and that the asymptomatic cases are as half as infectious as the symptomatic ones (i.e., $\mathcal R_a = 0.5 \mathcal R_s$).
-The intrinsic proportion of asymptomatic transmission $z$ is 0.11 (white circle in Figure~\ref{fig.relevance}A), but asymptomatic cases can account for anywhere between 6\% and 16\% of infection during the exponential growth phase across the range of mean asymptomatic generation interval we explore.
-Likewise, the basic reproduction number ranges between 2.3 and 2.6.
-Therefore, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread ($\mathcal R_0=2.5$; white circle in Figure~\ref{fig.relevance}B), it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
-
-% In both cases, the dependence of R0 on q is compared to a baseline of R0 ≈ 3.1 in a model with no secondary case production from asymptomatic infections (see filled circle at bottom left of Figure 1C-D. 
-% In other words, when R0 is estimated without explicitly accounting for asymptomatic spread, it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 
 Relative generation-interval dispersion of asymptomatic cases $\kappa_a/\kappa_s$ also have qualitatively similar effects on $q$ and ${\cal{R}}_0$.
 When the asymptomatic cases have a wider/narrower generation-interval distribution, higher intrinsic proportion of asymptomatic transmission $z$ increases/decreases the relevance of asymptomatic transmission $q$ but decreases/increases the basic reproduction number (Figure~S3).
