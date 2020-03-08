@@ -88,20 +88,21 @@ Here, we assume $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
 \end{center}
 \end{figure*}
 
-We explore the effects of different assumptions about duration and effectiveness of asymptomatic transmission on the importance of asymptomatic transmission and estimates of the realized relevance of asymptomatic infection $q$ and the basic reproduction number ${\cal{R}}_0$, given variation in relative mean generation interval $\bar G_a/\bar G_s$ of asymptomatic cases, using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
-We vary $\bar G_a/\bar G_s$ between 0.5 and 2, and infer values of $q$ and ${\cal{R}}_0$ compatible with an estimated growth rate $r$ from case data given the generation interval distributions of asymptomatic and symptomatic cases.
-Across the ranges of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.relevance}A).
-As the relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, increases, $q$ decreases because symptomatic cases are more likely to have short generation intervals (i.e., fast transmission events), which drive the spread during the growth phase (Figure~\ref{fig.relevance}A).
+We explore the effects of different assumptions about duration and effectiveness of asymptomatic transmission on the importance of asymptomatic transmission and estimates of the basic reproduction number ${\cal{R}}_0$. In particular, we vary assumptions about intrinsic proportion of asymptomatic transmission $z$ and its mean generation interval $\bar G_a$, using parameter values that are consistent with earlier COVID-19 models \citep{park_preprint}: $1/r=7$ days, $\bar G_s=8$ days, and $\kappa_s=\kappa_a=0.5$.
+We vary the ratio of generation intervals $\bar G_a/\bar G_s$ from 0.5 and 2, and infer values of $q$ and ${\cal{R}}_0$ compatible with an estimated growth rate $r$ from case data given the generation interval distributions of asymptomatic and symptomatic cases.
 
-Figure~\ref{fig.relevance}B compares the effect of relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, on the basic reproduction number ${\cal{R}}_0$.
+Across the range of parameters we explore, the intrinsic proportion of asymptomatic transmission $z$ is similar to the realized proportion $q$ (Figure~\ref{fig.importance}A).
+As the relative mean generation interval of asymptomatic transmission, $\bar G_a/\bar G_s$, increases, $q$ decreases because symptomatic cases are more likely to have short generation intervals (i.e., fast transmission events), which drive the spread during the growth phase (Figure~\ref{fig.importance}A).
+
+Figure~\ref{fig.importance}B compares the effect of relative mean generation interval of asymptomatic cases, $\bar G_a/\bar G_s$, on the basic reproduction number ${\cal{R}}_0$.
 When $\bar G_s < \bar G_a$, then ${\cal{R}}_0$ increases with $z$.
 This increase arises because asymptomatic infections that have long generation intervals increase the mean of overall generation intervals (see~\citep{park_2019practical}).
 Conversely, when $\bar G_s > \bar G_a$ then the strength ${\cal{R}}_0$ decreases with $z$ because short generation intervals of asymptomatic cases reduce the overall mean generation interval.
-Therefore, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread (white, dashed line in Figure~\ref{fig.relevance}B), it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
+Therefore, when ${\cal{R}}_0$ is estimated without explicitly accounting for asymptomatic spread (white, dashed line in Figure~\ref{fig.importance}B), it can be over- or under- estimated depending on the relative duration of infection between symptomatic and asymptomatic individuals.
 The qualitative effects of $z$ and $\bar G_a/\bar G_s$ on $q$ and ${\cal{R}}_0$ remain robust when we assume narrower ($\kappa_s = \kappa_a = 0.3$; Figure~S1) or wider ($\kappa_s = \kappa_a = 0.8$; Figure~S2) generation intervals.
 
 Relative generation-interval dispersion of asymptomatic cases $\kappa_a/\kappa_s$ also have qualitatively similar effects on $q$ and ${\cal{R}}_0$.
-When the asymptomatic cases have a wider/narrower generation-interval distribution, higher intrinsic proportion of asymptomatic transmission $z$ increases/decreases the relevance of asymptomatic transmission $q$ but decreases/increases the basic reproduction number (Figure~S3).
+When the asymptomatic cases have a wider/narrower generation-interval distribution, higher intrinsic proportion of asymptomatic transmission $z$ increases/decreases the realized proportion of asymptomatic transmission $q$ but decreases/increases the basic reproduction number (Figure~S3).
 Since a wider generation-interval distribution has a higher proportion of early transmission than a narrow one, increasing the generation-interval dispersion has qualitatively similar effects on $q$ and ${\cal{R}}_0$ as decreasing the mean generation interval.
 
 \section{Discussion}
@@ -110,11 +111,11 @@ Much is still unknown about course of asymptomatic infection compared to symptom
 Our current work highlights the need to characterize the duration of asymptomatic infections, relative to that of symptomatic ones, and their consequences not only for contact tracing but for precise estimation of the basic reproduction number of the ongoing COVID-19 outbreak~\citep{park_preprint}.
 The present findings are also consistent with a recent generalization linking speed, strength, and generation intervals, such that for a given observed speed increases in the mean generation interval imply larger reproduction number~\citep{park_2019practical}.
 
-If mild, asymptomatic infections are more persistent than severe, symptomatic ones, the mean generation interval for COVID-19 could be longer than estimated from symptomatic cases alone - possibly increasing ${\cal{R}}_0$ (Figure~\ref{fig.relevance}B).
-However, if asymptomatic cases tend to have shorter infection, then current estimates of ${\cal{R}}_0$ may be over-estimates of the underlying strength (Figure~\ref{fig.relevance}B), although asymptomatic cases may be driving a larger fraction of secondary cases than we would expect without accounting for their differences (Figure~\ref{fig.relevance}A).
+If mild, asymptomatic infections are more persistent than severe, symptomatic ones, the mean generation interval for COVID-19 could be longer than estimated from symptomatic cases alone - possibly increasing ${\cal{R}}_0$ (Figure~\ref{fig.importance}B).
+However, if asymptomatic cases tend to have shorter infection, then current estimates of ${\cal{R}}_0$ may be over-estimates of the underlying strength (Figure~\ref{fig.importance}B), although asymptomatic cases may be driving a larger fraction of secondary cases than we would expect without accounting for their differences (Figure~\ref{fig.importance}A).
 Therefore, current estimates of ${\cal{R}}_0$ that do not account for asymptomatic cases may be systematically biased.
 
-Finally, it is important to note we focused here on the exponential phase, but that the asymptomatic relevance $q$ is time-dependent, and will vary given the population state structure of infected individuals. Such variation in the ratio of asymptomatic to symptomatic cases will also impact estimates of case fatality rates insofar as many asymptomatic cases are not counted, particularly early in an outbreak.
+Finally, it is important to note we focused here on the exponential phase, but that the realized proportion of asymptomatic transmission $q$ is time-dependent, and will vary given the population state structure of infected individuals. Such variation in the ratio of asymptomatic to symptomatic cases will also impact estimates of case fatality rates insofar as many asymptomatic cases are not counted, particularly early in an outbreak.
 Future work might also consider the ways in which asymptomatic individuals modulate resurgent epidemics in a networked metapopulation~\citep{watts_pnas2005}.
 Characterizing the role of asymptomatic individuals in driving the persistence of the epidemic will be critical for assessing the post-pandemic outcome \citep{lipsitch_preprint}.
 
@@ -146,9 +147,6 @@ Characterizing the role of asymptomatic individuals in driving the persistence o
 %increasing ${\cal{R}}_0$ and driving a larger fraction of secondary cases.
 %This inference also reinforces 
 %the need to characterize the epidemiological characteristics of asymptomatic transmission.
-
-%than expected. Yet the relevance of asymptomatic cases
-%depends on their realized proportion at a population level.
 
 %Renewal equations provide a route to connect
 %observed increases in case counts, i.e.,
