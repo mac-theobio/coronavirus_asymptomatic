@@ -24,22 +24,26 @@ figdata <- data.frame(
   relG=rep(relG, each=length(z))
 )
 
-example_p <- 0.18
-example_R_a <- 0.5
-example_R_s <- 1
-example_z <- example_p * example_R_a/(1-example_p)
-example_R0 <- 1/((1-example_z) * (1 + kappa_s * r * G_s)^(-1/kappa_s) + example_z * (1 + kappa_a * r * relG * G_s)^(-1/kappa_a))
-example_R02 <- 1/((1-example_z) * (1 + kappa_s * r * G_s)^(-1/kappa_s) + example_z * (1 + kappa_a * r * G_s)^(-1/kappa_a))
-range(example_R0)
+zexample <- 0.5
+relg1 <- 0.55
+1/((1-zexample) * (1 + kappa_s * r * G_s)^(-1/kappa_s) + zexample * (1 + kappa_a * r * relg1 * G_s)^(-1/kappa_a))
+
+relg2 <- 1.8
+1/((1-zexample) * (1 + kappa_s * r * G_s)^(-1/kappa_s) + zexample * (1 + kappa_a * r * relg2 * G_s)^(-1/kappa_a))
+
 
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=R0)) +
   geom_contour(aes(relG, z, z=R0), col="white", bins=9) +
   geom_vline(xintercept=1, lty=2, col="white", lwd=0.8) +
-  # geom_hline(yintercept=example_z, col="red", lwd=1) +
-  # geom_point(aes(x=1, y=example_z, fill=example_R02), size=5, col="white", stroke=1, shape=21) +
+  # geom_point(aes(x=1, y=0), size=8, col="black", stroke=1, shape=1) +
+  annotate(geom="text", x=0.96, y=0.11, label="$\\mathcal{R}_0=2.5$", col="white", angle=90) +
   annotate(geom="text", x=1*sqrt(2), y=0.03, label="underestimated", col="white") +
   annotate(geom="text", x=1/sqrt(2), y=0.03, label="overestimated", col="white") +
+  annotate(geom="point", x=0.55, y=0.5, col="white", shape=2, size=5, stroke=2) +
+  annotate(geom="text", x=0.55, y=0.45, label="$\\mathcal{R}_0=2.0$", col="white", size=2.5) +
+  annotate(geom="point", x=1.8, y=0.5, col="white", shape=1, size=5, stroke=2) +
+  annotate(geom="text", x=1.8, y=0.45, label="$\\mathcal{R}_0=3.1$", col="white", size=2.5) +
   scale_x_log10("Relative mean asymptomatic generation interval, $G_a/G_s$", expand=c(0, 0),
                 breaks=c(0.5, 1, 2),
                 limits=c(0.5, 2)) +

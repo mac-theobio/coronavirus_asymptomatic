@@ -23,22 +23,22 @@ figdata <- data.frame(
   relG=rep(relG, each=length(z))
 )
 
-example_p <- 0.18
-example_R_a <- 0.5
-example_R_s <- 1
-example_z <- example_p * example_R_a/(1-example_p)
-example_qodds <- example_z/(1-example_z) *  (1 + kappa_s * r * G_s)^(1/kappa_s)/(1 + kappa_a * r * relG * G_s)^(1/kappa_a)
-example_q <- example_qodds/(1+example_qodds)
-range(example_q)
+zexample <- 0.5
+relg1 <- 0.55
+q1 <- (1 + kappa_s * r * G_s)^(1/kappa_s)/(1 + kappa_a * r * relg1 * G_s)^(1/kappa_a)
+q1/(1+q1)
 
-example_qodds2 <- example_z/(1-example_z) *  (1 + kappa_s * r * G_s)^(1/kappa_s)/(1 + kappa_a * r * G_s)^(1/kappa_a)
-example_q2 <- example_qodds2/(1+example_qodds2)
+relg2 <- 1.8
+q2 <- (1 + kappa_s * r * G_s)^(1/kappa_s)/(1 + kappa_a * r * relg2 * G_s)^(1/kappa_a)
+q2/(1+q2)
 
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=q)) +
   geom_contour(aes(relG, z, z=q), col="white") +
-  # geom_hline(yintercept=example_z, col="red", lwd=1) +
-  # geom_point(aes(x=1, y=example_z, fill=example_q2), size=5, col="white", shape=1, stroke=1) +
+  annotate(geom="point", x=0.55, y=0.5, col="white", shape=2, size=5, stroke=2) +
+  annotate(geom="text", x=0.55, y=0.45, label="$q=0.59$", col="white", size=2.5) +
+  annotate(geom="point", x=1.8, y=0.5, col="white", shape=1, size=5, stroke=2) +
+  annotate(geom="text", x=1.8, y=0.45, label="$q=0.38$", col="white", size=2.5) +
   scale_x_log10("Relative mean asymptomatic generation interval, $G_a/G_s$", expand=c(0, 0),
                      breaks=c(0.5, 1, 2)) +
   scale_y_continuous("Intrinsic proportion of asymptomatic transmission, $z$", expand=c(0, 0),

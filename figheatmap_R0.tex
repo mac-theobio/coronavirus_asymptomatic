@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.12.3 on 2020-03-09 11:51:36
+% Created by tikzDevice version 0.12.3 on 2020-03-09 12:40:36
 % !TEX encoding = UTF-8 Unicode
 \documentclass[10pt]{article}
 \usepackage{tikz}
@@ -812,9 +812,22 @@
 
 \path[draw=drawColor,line width= 0.9pt,dash pattern=on 4pt off 4pt ,line join=round] (186.47, 30.69) -- (186.47,302.56);
 
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.10] at (181.30, 60.59) {$\mathcal{R}_0=2.5$};
+
 \node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.10] at (262.63, 35.04) {underestimated};
 
 \node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.10] at (110.31, 35.04) {overestimated};
+
+\path[draw=drawColor,line width= 1.5pt,line join=round,line cap=round] ( 55.10,177.16) --
+	( 64.23,161.35) --
+	( 45.97,161.35) --
+	( 55.10,177.16);
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 55.10,150.58) {$\mathcal{R}_0=2.0$};
+
+\path[draw=drawColor,line width= 1.5pt,line join=round,line cap=round] (315.64,166.62) circle (  6.78);
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.71] at (315.64,150.58) {$\mathcal{R}_0=3.1$};
 \definecolor{drawColor}{gray}{0.20}
 
 \path[draw=drawColor,line width= 0.6pt,line join=round,line cap=round] ( 34.16, 30.69) rectangle (338.79,302.56);
