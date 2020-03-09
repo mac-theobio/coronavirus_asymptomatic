@@ -1,5 +1,6 @@
 library(emdbook)
-library(ggplot2); theme_set(theme_bw(base_family = "Times"))
+library(ggplot2); theme_set(theme_bw())
+library(tikzDevice)
 
 r <- 1/7
 G_s <- 8
@@ -26,18 +27,20 @@ figdata <- data.frame(
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=q)) +
   geom_contour(aes(relG, z, z=q), col="white") +
-  scale_x_log10(expression(paste("Relative mean asymptomatic generation interval, ", italic(G[a]/G[s]))), expand=c(0, 0),
+  scale_x_log10("Relative mean asymptomatic generation interval, $G_a/G_s$", expand=c(0, 0),
                      breaks=c(0.5, 1, 2)) +
-  scale_y_continuous(expression(paste("Intrinsic proportion of asymptomatic transmission, ", italic(z))), expand=c(0, 0),
+  scale_y_continuous("Intrinsic proportion of asymptomatic transmission, $z$", expand=c(0, 0),
                      limits=c(0, 1),
                      breaks=0:10/10) +
-  scale_fill_gradientn(colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a", "#f9f871", "#f5f3b5"),
+  scale_fill_gradientn("$q$", colors=c("black", "#8a0072", "#cf2661", "#f66d4e", "#ffb34a", "#f9f871", "#f5f3b5"),
                        limits=c(0, 1),
                        breaks=0:5*2/10) +
-  ggtitle("A. Relevance of asymptomatic cases") +
+  ggtitle("A. Realized proportion of asymptomatic transmission") +
   theme(
-    legend.title = element_blank(),
     legend.key.height = unit(1.8, "cm")
   )
 
-ggsave("figheatmap_08.pdf", g0, width=5.3, height=4.3)
+tikz(file = "figheatmap_08.tex", width = 5.5, height = 4.5, standAlone = T)
+print(g0)
+dev.off()
+tools::texi2dvi('figheatmap_08.tex', pdf = T, clean = T)
