@@ -31,7 +31,6 @@ relg1 <- 0.55
 relg2 <- 1.8
 1/((1-zexample) * (1 + kappa_s * r * G_s)^(-1/kappa_s) + zexample * (1 + kappa_a * r * relg2 * G_s)^(-1/kappa_a))
 
-
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=R0)) +
   geom_contour(aes(relG, z, z=R0), col="white", bins=9) +
@@ -40,10 +39,10 @@ g0 <- ggplot(figdata) +
   annotate(geom="text", x=0.96, y=0.11, label="$\\mathcal{R}_0=2.5$", col="white", angle=90) +
   annotate(geom="text", x=1*sqrt(2), y=0.03, label="underestimated", col="white") +
   annotate(geom="text", x=1/sqrt(2), y=0.03, label="overestimated", col="white") +
-  annotate(geom="point", x=0.55, y=0.5, col="white", shape=2, size=5, stroke=2) +
-  annotate(geom="text", x=0.55, y=0.45, label="$\\mathcal{R}_0=2.0$", col="white", size=2.5) +
-  annotate(geom="point", x=1.8, y=0.5, col="white", shape=1, size=5, stroke=2) +
-  annotate(geom="text", x=1.8, y=0.45, label="$\\mathcal{R}_0=3.1$", col="white", size=2.5) +
+  annotate(geom="point", x=0.55, y=0.5, col="white", shape=21, size=4, fill="white") +
+  annotate(geom="text", x=0.57, y=0.46, label="$\\mathcal{R}_0=2.0$", col="white") +
+  annotate(geom="point", x=1.8, y=0.5, col="white", shape=24, size=4, fill="white") +
+  annotate(geom="text", x=1.78, y=0.46, label="$\\mathcal{R}_0=3.1$", col="white") +
   scale_x_log10("Relative mean asymptomatic generation interval, $G_a/G_s$", expand=c(0, 0),
                 breaks=c(0.5, 1, 2),
                 limits=c(0.5, 2)) +
@@ -55,10 +54,10 @@ g0 <- ggplot(figdata) +
                        breaks=c(1.5, 2.5, 3.5, 4.5, 5.5)) +
   ggtitle("B. Basic reproduction number") +
   theme(
-    legend.key.height = unit(1.8, "cm")
+    legend.key.height = unit(1.5, "cm")
   )
 
-tikz(file = "figheatmap_R0.tex", width = 5.5, height = 4.5, standAlone = T)
+tikz(file = "figheatmap_R0.tex", width = 5, height = 4, standAlone = T)
 print(g0)
 dev.off()
 tools::texi2dvi('figheatmap_R0.tex', pdf = T, clean = T)

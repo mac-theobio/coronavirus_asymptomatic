@@ -37,10 +37,10 @@ g0 <- ggplot(figdata) +
                        breaks=0:5*2/10) +
   ggtitle("A. Realized proportion of asymptomatic transmission") +
   theme(
-    legend.key.height = unit(1.8, "cm")
+    legend.key.height = unit(1.5, "cm")
   )
 
-tikz(file = "figheatmap_03.tex", width = 5.5, height = 4.5, standAlone = T)
+tikz(file = "figheatmap_03.tex", width = 5, height = 4, standAlone = T)
 print(g0)
 dev.off()
 tools::texi2dvi('figheatmap_03.tex', pdf = T, clean = T)

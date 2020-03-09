@@ -35,10 +35,10 @@ q2/(1+q2)
 g0 <- ggplot(figdata) +
   geom_raster(aes(relG, z, fill=q)) +
   geom_contour(aes(relG, z, z=q), col="white") +
-  annotate(geom="point", x=0.55, y=0.5, col="white", shape=2, size=5, stroke=2) +
-  annotate(geom="text", x=0.55, y=0.45, label="$q=0.59$", col="white", size=2.5) +
-  annotate(geom="point", x=1.8, y=0.5, col="white", shape=1, size=5, stroke=2) +
-  annotate(geom="text", x=1.8, y=0.45, label="$q=0.38$", col="white", size=2.5) +
+  annotate(geom="point", x=0.55, y=0.5, col="white", shape=21, size=4, fill="white") +
+  annotate(geom="text", x=0.565, y=0.46, label="$q=0.59$", col="white") +
+  annotate(geom="point", x=1.8, y=0.5, col="white", shape=24, size=4, fill="white") +
+  annotate(geom="text", x=1.775, y=0.46, label="$q=0.38$", col="white") +
   scale_x_log10("Relative mean asymptomatic generation interval, $G_a/G_s$", expand=c(0, 0),
                      breaks=c(0.5, 1, 2)) +
   scale_y_continuous("Intrinsic proportion of asymptomatic transmission, $z$", expand=c(0, 0),
@@ -49,10 +49,10 @@ g0 <- ggplot(figdata) +
                        breaks=0:5*2/10) +
   ggtitle("A. Realized proportion of asymptomatic transmission") +
   theme(
-    legend.key.height = unit(1.8, "cm")
+    legend.key.height = unit(1.5, "cm")
   )
 
-tikz(file = "figheatmap.tex", width = 5.5, height = 4.5, standAlone = T)
+tikz(file = "figheatmap.tex", width = 5, height = 4, standAlone = T)
 print(g0)
 dev.off()
 tools::texi2dvi('figheatmap.tex', pdf = T, clean = T)
