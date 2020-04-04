@@ -52,12 +52,12 @@ Differences in infectiousness is captured by the differences in their intrinsic 
 
 \revtext{At present, I think your method implicitly assumes that transmissibility is the same for symptomatic and asymptomatic cases as their r value is the same.}
 
-We do not assume that their transmissibility is the same; the differences in their transmissilibity is modeled by the differences in their intrinsic reproduction numbers $\mathcal R_a$ and $\mathcal R_s$ as well as their generation-interval distributions $g_a(\tau)$ nad $g_s(\tau)$. The exponential growth rate $r$ is the resuling growth rate due to combination of asymptomatic and symptomatic transmission. This growth rate is different from what we would get if we only have asymptomatic or symptomatic individuals. We added the following sentence to clarify this point:
+We do not assume that their transmissibility is the same; the differences in their transmissibility is modeled by the differences in their intrinsic reproduction numbers $\mathcal R_a$ and $\mathcal R_s$ as well as their generation-interval distributions $g_a(\tau)$ and $g_s(\tau)$. The exponential growth rate $r$ is the resulting growth rate due to combination of asymptomatic and symptomatic transmission. This growth rate is different from what we would get if we only have asymptomatic or symptomatic individuals. We added the following sentence to clarify this point:
 
 ``During the period of exponential growth, we assume $S$ remains nearly constant, and $i(t)$ is proportional to $\exp(r t)$;
 here, the observed exponential growth rate $r$ is an ``average'' of the exponential growth rates we would observe if there were only asymptomatic ($p=1$) or symptomatic ($p=0$) cases.''
 
-\revtext{Please be explicit in the methods section about how the naïve estimation of R0 is done (presumably using equation 10) and also provide an expanded equation for the 'corrected' estimation using the stratified generation times. Right now, the clearest description is in the caption of figure 1.  I think you mean to say that the naïve estimate of R0 is based on the generation time of symptomatic cases using the Lotka-Voltera estimation method (equation 10) and assumes that this interval is similar for symptomatic and asymptomatic cases.}
+\revtext{Please be explicit in the methods section about how the naive estimation of R0 is done (presumably using equation 10) and also provide an expanded equation for the 'corrected' estimation using the stratified generation times. Right now, the clearest description is in the caption of figure 1.  I think you mean to say that the naive estimate of R0 is based on the generation time of symptomatic cases using the Lotka-Voltera estimation method (equation 10) and assumes that this interval is similar for symptomatic and asymptomatic cases.}
 
 We have added the following sentences:
 
@@ -74,12 +74,12 @@ We compare this with the naive estimate of the basic reproduction number that as
 
 We explain the potential differences earlier as suggested:
 
-``The differences in the generation-interval distributions between asymptomatic and symptomatic cases can be caused by the differences in the natural history of infection irrespective of their transmissilibility:
-Individuals with subclinical infections may recover faster and have short generation intervals, or have persistent infection and long generation intervals.''
+``The differences in the generation-interval distributions between asymptomatic and symptomatic cases can be caused by the differences in the natural history of infection irrespective of their transmissibility:
+Individuals with asymptomatic infections may recover faster and have short generation intervals, or have persistent infection and long generation intervals.''
 
 \revtext{Figure 1:
 -In the caption, please state 'For both panels, the triangle…'
--Panel B) Please rename the dashed line something like 'naïve R0' so that it is clear that the contours reflect the corrected reproduction number and we understand why the regions on the left side of the dashed line says underestimated and the right side says overestimated.  It took me a while to realize that the dashed line was the naïve estimate so I thought that the colors were reversed.}
+-Panel B) Please rename the dashed line something like 'naive R0' so that it is clear that the contours reflect the corrected reproduction number and we understand why the regions on the left side of the dashed line says underestimated and the right side says overestimated.  It took me a while to realize that the dashed line was the naive estimate so I thought that the colors were reversed.}
 
 Done. We also added the following sentence in the figure caption:
 
