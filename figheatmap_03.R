@@ -4,8 +4,8 @@ library(tikzDevice)
 
 r <- 1/7
 G_s <- 8
-kappa_s <- 0.2
-kappa_a <- 0.2
+kappa_s <- 0.3
+kappa_a <- 0.3
 
 z <- seq(0.01, 0.99, by=0.005)
 relG <- exp(seq(log(0.5), log(2), by=0.005))

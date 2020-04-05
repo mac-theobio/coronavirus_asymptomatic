@@ -1,5 +1,6 @@
 library(emdbook)
 library(ggplot2); theme_set(theme_bw())
+library(tikzDevice)
 
 r <- 1/7
 G_s <- 8
