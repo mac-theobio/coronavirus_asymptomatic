@@ -36,7 +36,7 @@ g0 <- ggplot(figdata) +
   geom_contour(aes(relG, z, z=R0), col="white", bins=9) +
   geom_vline(xintercept=1, lty=2, col="white", lwd=0.8) +
   # geom_point(aes(x=1, y=0), size=8, col="black", stroke=1, shape=1) +
-  annotate(geom="text", x=0.96, y=0.27, label="$\\textrm{Naive estimate},\\,\\mathcal{R}_0=2.5$", col="white", angle=90) +
+  annotate(geom="text", x=0.96, y=0.29, label="$\\textrm{Naive estimate},\\,\\mathcal{R}_{\\tiny\\textrm{naive}}=2.5$", col="white", angle=90) +
   annotate(geom="text", x=1*sqrt(2), y=0.03, label="underestimated", col="white") +
   annotate(geom="text", x=1/sqrt(2), y=0.03, label="overestimated", col="white") +
   annotate(geom="point", x=0.55, y=0.5, col="white", shape=21, size=4, fill="white") +

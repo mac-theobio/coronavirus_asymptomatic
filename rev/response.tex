@@ -55,7 +55,7 @@ Differences in infectiousness is captured by the differences in their intrinsic 
 We do not assume that their transmissibility is the same; the differences in their transmissibility is modeled by the differences in their intrinsic reproduction numbers $\mathcal R_a$ and $\mathcal R_s$ as well as their generation-interval distributions $g_a(\tau)$ and $g_s(\tau)$. The exponential growth rate $r$ is the resulting growth rate due to combination of asymptomatic and symptomatic transmission. This growth rate is different from what we would get if we only have asymptomatic or symptomatic individuals. We added the following sentence to clarify this point:
 
 ``During the period of exponential growth, we assume $S$ remains nearly constant, and $i(t)$ is proportional to $\exp(r t)$;
-here, the observed exponential growth rate $r$ is an ``average'' of the exponential growth rates we would observe if there were only asymptomatic ($p=1$) or symptomatic ($p=0$) cases.''
+here, the observed exponential growth rate $r$ is an average of the exponential growth rates we would observe if there were only asymptomatic ($p=1$) or symptomatic ($p=0$) cases.''
 
 \revtext{Please be explicit in the methods section about how the naive estimation of R0 is done (presumably using equation 10) and also provide an expanded equation for the 'corrected' estimation using the stratified generation times. Right now, the clearest description is in the caption of figure 1.  I think you mean to say that the naive estimate of R0 is based on the generation time of symptomatic cases using the Lotka-Voltera estimation method (equation 10) and assumes that this interval is similar for symptomatic and asymptomatic cases.}
 
@@ -63,11 +63,11 @@ We have added the following sentences:
 
 ``We infer values of $q$ using Eq.~(8) and ${\cal{R}}_0$ using the Euler-Lotka equation:
 \begin{equation}
-1/\mathcal R_0 = \int \exp(-r \tau) \left(z g_a(\tau) + (1-z) g_s(\tau)\right) \mathrm{d} \tau.
+\frac{1}{\mathcal R_0} = \int \exp(-r \tau) \left(z g_a(\tau) + (1-z) g_s(\tau)\right) \mathrm{d} \tau.
 \end{equation}
 We compare this with the naive estimate of the basic reproduction number that assumes that the generation-interval distributions of the asymptomatic and symptomatic cases are identical:
 \begin{equation}
-1/\mathcal R_{\tiny \textrm{naive}} = \int \exp(-r \tau) g_s(\tau) \mathrm{d} \tau.
+\frac{1}{\mathcal R_{\tiny \textrm{naive}}} = \int \exp(-r \tau) g_s(\tau) \mathrm{d} \tau.
 \end{equation}''
 
 \revtext{Top of page 5: provide an example about how we might expect the distribution of generation-intervals to vary between symptomatic vs. asymptomatic infections}
