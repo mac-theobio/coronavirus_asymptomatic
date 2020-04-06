@@ -18,8 +18,8 @@ Thus, we investigate the relationship between individual-level features of asymp
 We model viral spread using a renewal-equation framework \citep{heesterbeek1996concept}, which allows us to model the current incidence of infected individuals (i.e., the rate at which new infections occur in the population) as a function of previous incidence and how infectiousness of an infected individual varies over the course of their infection.
 We divide incidence $i$ into two categories -- $i_a$ and $i_s$ -- corresponding to incidence of asymptomatic and symptomatic cases, respectively.
 Newly infected individuals that are either asymptomatically or symptomatically infected can transmit the disease to others, but they may differ in their intrinsic reproduction numbers, ${\cal{R}}_a$ and ${\cal{R}}_s$, respectively, as well as intrinsic generation-interval distributions \citep{champredon2015intrinsic}, $g_a(\tau)$ and $g_s(\tau)$.
-Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person \citep{svensson2007note}, characterize the relationship between the epidemic growth rate $r$ and the reproduction number \citep{wallinga2007generation}.
-The differences in the generation-interval distributions between asymptomatic and symptomatic cases can be caused by the differences in the natural history of infection irrespective of their transmissibility:
+Generation intervals, which are defined as the time between when an individual is infected and when that individual infects another person \citep{svensson2007note}, shape the relationship between the epidemic growth rate $r$ and the reproduction number \citep{wallinga2007generation}.
+The differences in the generation-interval distributions between asymptomatic and symptomatic cases can be caused by the differences in the natural history of infection:
 Individuals with asymptomatic infections may recover faster and have short generation intervals, or have persistent infection and long generation intervals (cf. \citep{roberts2007model}).
 
 Neglecting births and loss of immunity on the time scale of the outbreak, the dynamics of susceptibles and incidence are (see Table~S1 for parameter definitions):
@@ -123,7 +123,7 @@ Our reproductive number findings fit into a broader framework linking epidemic s
 
 If asymptomatic infections are more persistent than symptomatic ones, the mean generation interval for COVID-19 could be longer than estimated from symptomatic cases alone -- possibly causing ${\cal{R}}_0$ to be underestimated (Figure~\ref{fig.importance}B).
 However, if asymptomatic cases tend to resolve quickly, then current estimates of ${\cal{R}}_0$ may be over-estimates of the underlying strength (Figure~\ref{fig.importance}B), and asymptomatic cases may be driving a larger fraction of secondary cases than we would expect without accounting for their differences (Figure~\ref{fig.importance}A).
-The biases in the estimates of ${\cal{R}}_0$ will necessarily bias the estimates of the amount of intervention required to control the epidemic.
+The biases in the estimates of ${\cal{R}}_0$ will necessarily bias estimates of the amount of intervention required to control the epidemic.
 Note that cases do not have to be completely asymptomatic for our qualitative results to apply.
 People with mild symptoms unlikely to be diagnosed in a particular time and place (sometimes referred to as subclinical cases) are expected to affect transmission patterns in the same way.
 

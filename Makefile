@@ -12,11 +12,14 @@ current: target
 
 Ignore += *.tgz
 
-Sources += abs.tex acknowledge.tex appendix.tex asymp.tex author.tex biblio.tex settings.tex short.body.tex title.tex research.in.context.tex
+Sources += abs.tex acknowledge.tex appendix.tex asymp.tex author.tex biblio.tex settings.tex short.body.tex title.tex 
 Sources += coronavirus.bib naturemag.bst
 
 asymp.pdf: short.body.tex asymp.tex
 ## asymp.bbl: coronavirus.bib
+
+## Sources += response.tex
+response.pdf: response.tex
 
 ######################################################################
 
