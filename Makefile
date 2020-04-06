@@ -16,7 +16,10 @@ Sources += abs.tex acknowledge.tex appendix.tex asymp.tex author.tex biblio.tex 
 Sources += coronavirus.bib naturemag.bst
 
 asymp.pdf: short.body.tex asymp.tex
+asymp.diff.pdf: 
 ## asymp.bbl: coronavirus.bib
+
+short.body.tex.c3c68eec9.olddiff:
 
 ## Sources += response.tex
 response.pdf: response.tex
