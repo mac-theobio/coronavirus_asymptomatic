@@ -48,7 +48,9 @@ Individuals with asymptomatic infections may recover faster and have short gener
 
 \revtext{It might be useful to also note in the discussion how differences in infectiousness might layer on top of differences in duration to change estimates of R0.} 
 
-Differences in infectiousness is captured by the differences in their intrinsic reproduction numbers $\mathcal R_a$ and $\mathcal R_s$, and therefore their intrinsic proportion of transmission $z$ and $1-z$; this is already explained in the paper.
+Differences in infectiousness is captured by the differences in their intrinsic reproduction numbers $\mathcal R_a$ and $\mathcal R_s$, and therefore their intrinsic proportion of transmission $z$ and $1-z$. We added a sentence in the discussion to clarify this point:
+
+``The importance of these effects depends on the relative infectiousness of asymptomatic transmission as well as the proportion of incident cases that are asymptomatic (and therefore the intrinsic proportion of asymptomatic transmission $z$.''
 
 \revtext{At present, I think your method implicitly assumes that transmissibility is the same for symptomatic and asymptomatic cases as their r value is the same.}
 
@@ -108,22 +110,13 @@ Thank you very much!
 
 Done.
 
-``Neglecting births and loss of immunity on the time scale of the outbreak, the dynamics of susceptibles and incidence are:
-\begin{eqnarray}
-\dot{S}&=&-i(t), \\
-i(t)&=&\mathcal R_a S(t) \int_0^\infty i_a(t-\tau) g_a(\tau) \mathrm{d}\tau + \mathcal R_s S(t) \int_0^\infty i_s(t-\tau) g_s(\tau) \mathrm{d}\tau,
-\end{eqnarray}
-where $i(t) = i_a(t) + i_s(t)$.''
-
 \revtext{2. Indicate below equation 10 that the ode model in the supplement is an SEIR model}
 
 Done.
 
-``In Supplementary Materials, we also use an ordinary differential equation model (SEIR model) including both asymptomatic and symptomatic cases to give a concrete example of how differences in generation intervals affect both $q$ and estimates of $\mathcal R_0$.''
-
 \revtext{3. Figure 1A: it may be more helpful to see the difference between realized proportion and intrinsic proportion as the heatmap color, rather than the realized proportion}
 
-We have added the figure to the supplementary file with the following sentence in the main text:
+We have added this as a new figure to the supplement, referred to in the main text:
 
 ``In Figure~S1, we present the same figure but showing differences between the realized and the intrinsic proportion of asymptomatic transmission, $q-z$.''
 
